@@ -11,7 +11,7 @@ def menu():
         d   done one task from a to
         p   print all todo's
         w   write to disk and exit
-        crtl+c  to cancel
+        q  to quit
         """)
 
 command = str()
@@ -19,4 +19,3 @@ while(command != "q" or command != "quit"):
     command = input("command (m for menu): ")
     if(command == 'm'):
         menu()
-    
