@@ -2,19 +2,19 @@
 
 import os
 import sys
-
+from json import load
 
 def menu():
     print("""
     help:
         
         add:
-            a   add a new tag
-            i   insert a task under a tag
+            a   add a new to
+            i   insert a task under a to
 
         done:
-            c   completion an entire tag
-            d   done one task from a tag
+            c   completion an entire to
+            d   done one task from a to
         
         save and print:
             p   print all todo's
@@ -34,8 +34,21 @@ def clear():
         os.system("cls")
 
 
-
-
+def printTask():
+    with open('.to', 'r') as fli:
+        fli = load(fli)
+        lstto = list(fli['to'].keys())
+        for i in range(len(lstto)):
+            print(lstto[i]+":")
+            to_count_done = 0
+            to_count_list = len(fli['to'][lstto[i]])
+            for j in fli['to'][lstto[i]]:
+                if(j['done']=='False'):
+                    print("\t"+j['task'])
+                elif(j['done'] == 'True'):
+                    to_count_done += 1
+            if(to_count_done == to_count_list):
+                print('\t'+'all done')
 
 command = str()
 while(command != "q" or command != "quit"):
@@ -51,7 +64,7 @@ while(command != "q" or command != "quit"):
     elif(command == 'd'):
         pass
     elif(command == 'p'):
-        pass
+        printTask()
     elif(command == 's'):
         pass
     elif(command == 'w'):
