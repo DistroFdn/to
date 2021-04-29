@@ -1,0 +1,12 @@
+{
+    "to":{
+        "fix":[
+                {"done":"False", "task":"fix line 13 in module save", "priority":5},
+                {"done":"True", "task":"in main, fix the return data of second loop", "priority":5},
+                {"done":"True", "task":"change function that return a tuple to list", "priority":5}
+              ],
+        "add":[
+                {"done":"True", "task":"add a save module to save file", "priority":5}
+              ]
+        }
+}
