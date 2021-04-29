@@ -5,8 +5,8 @@ def menu():
     print("""
     help:
         
-        a   make a new to
-        e   edit a to
+        a   add a new to
+        i   insert a task
         c   completion an entire to
         d   done one task from a to
         p   print all todo's
