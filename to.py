@@ -11,19 +11,19 @@ def menu():
         add:
             a   add a new to
             i   insert a task under a to
+            e   edit a task or to
 
         done:
             c   completion an entire to
             d   done one task from a to
         
-        save and print:
+        print:
             p   print all todo's
-            s   save
+            s  show task's wich you done
             clear clear the screen
             
         quit and exit:
-            w   write to disk and exit
-            q  to quit
+            q  exit
         """)
 
 
@@ -50,26 +50,35 @@ def printTask():
             if(to_count_done == to_count_list):
                 print('\t'+'all done')
 
-command = str()
-while(command != "q" or command != "quit"):
-    command = input("command (m for menu): ")
-    if(command == 'm'):
-        menu()
-    elif(command == 'a'):
-        pass
-    elif(command == 'i'):
-        pass
-    elif(command == 'c'):
-        pass
-    elif(command == 'd'):
-        pass
-    elif(command == 'p'):
-        printTask()
-    elif(command == 's'):
-        pass
-    elif(command == 'w'):
-        pass
-    elif(command == 'q'):
-        quit()
-    elif(command == 'clear'):
-        clear()
+
+
+try:
+    command = str()
+    while(command != "q" or command != "quit"):
+        command = input("command (m for menu): ")
+        if(command == 'm'):
+            menu()
+        elif(command == 'a'):
+            pass
+        elif(command == 'i'):
+            pass
+        elif(command == 'e'):
+            pass
+        elif(command == 'c'):
+            pass
+        elif(command == 'd'):
+            pass
+        elif(command == 'p'):
+            printTask()
+        elif(command == 'pd'):
+            pass
+        elif(command == 's'):
+            pass
+        elif(command == 'clear'):
+            clear()
+        elif(command == 'w'):
+            pass
+        elif(command == 'q'):
+            quit()
+except:
+    pass
