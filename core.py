@@ -7,6 +7,8 @@ from json import load
 
 def menu():
     print("""
+    For run the program, use < python3 to.py -s >
+
     help:
         
         add:
