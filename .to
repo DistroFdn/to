@@ -1,12 +1,12 @@
 {
     "to":{
         "fix":[
-                {"done":"False", "task":"fix line 13 in module save", "priority":5, "deadtime":[1619729040, 1619732640]},
-                {"done":"True", "task":"in main, fix the return data of second loop", "priority":5, "deadtime":[1619729040, 1619732640]},
-                {"done":"True", "task":"change function that return a tuple to list", "priority":5, "deadtime":[1619729040, 1619732640]}
+                {"done":"False", "task":"fix line 13 in module save", "priority":1, "deadtime":[1619729040, 1619732640]},
+                {"done":"False", "task":"in main, fix the return data of second loop", "priority":2, "deadtime":[1619729040, 1619732640]},
+                {"done":"False", "task":"change function that return a tuple to list", "priority":3, "deadtime":[1619729040, 1619732640]}
               ],
         "add":[
-                {"done":"True", "task":"add a save module to save file", "priority":5, "deadtime":[1619729040, 1619732640]}
+                {"done":"False", "task":"add a save module to save file", "priority":1, "deadtime":[1619729040, 1619732640]}
               ]
         }
 }

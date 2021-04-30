@@ -5,6 +5,17 @@ import os
 import sys
 from json import load
 
+class tcolor:
+    PURPPLE = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    NORMAL = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def menu():
     print("""
     For run the program, use < python3 to.py -s >
@@ -40,12 +51,18 @@ def printTask():
         fli = load(fli)
         lstto = list(fli['to'].keys())
         for i in range(len(lstto)):
-            print(lstto[i]+":")
+            print(tcolor.NORMAL+lstto[i]+":")
             to_count_done = 0
             to_count_list = len(fli['to'][lstto[i]])
             for j in fli['to'][lstto[i]]:
                 if(j['done']=='False'):
-                    print("\t"+j['task'])
+                    if(j['priority'] == 1):
+                        print(tcolor.GREEN+"\t"+j['task'])
+                    elif(j['priority'] == 2):
+                        print(tcolor.YELLOW+"\t"+j['task'])
+                    elif(j['priority'] == 3):
+                        print(tcolor.RED+"\t"+j['task'])
+                    
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
