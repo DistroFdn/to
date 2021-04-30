@@ -3,11 +3,6 @@
 import core
 import sys
 
-try:
-    sys.argv[1] == "-s"
-except IndexError:
-    raise SystemExit(core.menu())
-
 command = str()
 
 while(command != "q" or command != "quit"):
