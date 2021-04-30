@@ -53,16 +53,17 @@ def printTask():
         for i in range(len(lstto)):
             print(tcolor.NORMAL+lstto[i]+":")
             to_count_done = 0
+            todo_count = 0
             to_count_list = len(fli['to'][lstto[i]])
             for j in fli['to'][lstto[i]]:
                 if(j['done']=='False'):
+                    todo_count += 1
                     if(j['priority'] == 1):
-                        print(tcolor.GREEN+"\t"+j['task'])
+                        print(tcolor.GREEN+"\t"+str(todo_count)+"."+j['task'])
                     elif(j['priority'] == 2):
-                        print(tcolor.YELLOW+"\t"+j['task'])
+                        print(tcolor.YELLOW+"\t"+str(todo_count)+"."+j['task'])
                     elif(j['priority'] == 3):
-                        print(tcolor.RED+"\t"+j['task'])
-                    
+                        print(tcolor.RED+"\t"+str(todo_count)+"."+j['task'])
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
