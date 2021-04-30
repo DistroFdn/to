@@ -70,14 +70,10 @@ try:
             pass
         elif(command == 'p'):
             printTask()
-        elif(command == 'pd'):
-            pass
         elif(command == 's'):
             pass
         elif(command == 'clear'):
             clear()
-        elif(command == 'w'):
-            pass
         elif(command == 'q'):
             quit()
 except:
