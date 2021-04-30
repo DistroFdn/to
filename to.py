@@ -1,5 +1,6 @@
 #!/bin/python3
 
+import json
 import os
 import sys
 from json import load
@@ -51,30 +52,42 @@ def printTask():
                 print('\t'+'all done')
 
 
+def printDone():
+    done_count = 0
+    print("you done:")
+    with open(".to", 'r') as fli:
+        fli = load(fli)
+        lstto = fli['to'].keys()
+        for i in lstto:
+            print("\n\t"+i+":")
+            for j in (fli['to'][i]):
+                if(j['done'] == 'True'):
+                    print("\t\t"+j['task'])
+                    done_count += 1
+    print("\n"+str(done_count) + " task done")
 
-try:
-    command = str()
-    while(command != "q" or command != "quit"):
-        command = input("command (m for menu): ")
-        if(command == 'm'):
-            menu()
-        elif(command == 'a'):
-            pass
-        elif(command == 'i'):
-            pass
-        elif(command == 'e'):
-            pass
-        elif(command == 'c'):
-            pass
-        elif(command == 'd'):
-            pass
-        elif(command == 'p'):
-            printTask()
-        elif(command == 's'):
-            pass
-        elif(command == 'clear'):
-            clear()
-        elif(command == 'q'):
-            quit()
-except:
-    pass
+
+command = str()
+while(command != "q" or command != "quit"):
+    command = input("command (m for menu): ")
+    if(command == 'm'):
+        menu()
+    elif(command == 'a'):
+        pass
+    elif(command == 'i'):
+        pass
+    elif(command == 'e'):
+        pass
+    elif(command == 'c'):
+        pass
+    elif(command == 'd'):
+        pass
+    elif(command == 'p'):
+        printTask()
+    elif(command == 's'):
+        printDone()
+    elif(command == 'clear'):
+        clear()
+    elif(command == 'q'):
+        quit()
+
