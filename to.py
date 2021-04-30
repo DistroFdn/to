@@ -7,7 +7,7 @@ command = str()
 while(command != "q" or command != "quit"):
     command = input("command (m for menu): ")
     if(command == 'm'):
-        menu()
+        core.menu()
     elif(command == 'a'):
         pass
     elif(command == 'i'):
@@ -19,11 +19,11 @@ while(command != "q" or command != "quit"):
     elif(command == 'd'):
         pass
     elif(command == 'p'):
-        printTask()
+        core.printTask()
     elif(command == 's'):
-        printDone()
+        core.printDone()
     elif(command == 'clear'):
-        clear()
+        core.clear()
     elif(command == 'q'):
         quit()
     else:
