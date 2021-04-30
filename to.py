@@ -26,3 +26,5 @@ while(command != "q" or command != "quit"):
         clear()
     elif(command == 'q'):
         quit()
+    else:
+        pass
