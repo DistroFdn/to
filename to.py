@@ -1,15 +1,19 @@
 #!/bin/python3
 
 import core
+import sys
+
+try:
+    sys.argv[1] == "-s"
+except IndexError:
+    raise SystemExit(core.menu())
 
 command = str()
 
 while(command != "q" or command != "quit"):
     command = input("command (m for menu): ")
-    if(command == 'm'):
+    if(command == 'a'):
         core.menu()
-    elif(command == 'a'):
-        pass
     elif(command == 'i'):
         pass
     elif(command == 'e'):
