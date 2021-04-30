@@ -1,7 +1,8 @@
 # to
 
-### a todo program.
+## a todo program.
 
+### this program is under building
 ---
 
 - How to get this app
