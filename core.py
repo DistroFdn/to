@@ -76,9 +76,9 @@ def printDone():
         fli = load(fli)
         lstto = fli['to'].keys()
         for i in lstto:
-            print("\n\t"+i+":")
+            print(tcolor.NORMAL+"\n\t"+i+":")
             for j in (fli['to'][i]):
                 if(j['done'] == 'True'):
-                    print("\t\t"+j['task'])
+                    print(tcolor.CYAN+"\t\t"+j['task'])
                     done_count += 1
-    print("\n"+str(done_count) + " task done")
+    print(tcolor.BLUE+"\n"+str(done_count) + " task done")
