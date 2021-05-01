@@ -69,7 +69,6 @@ def printTask():
 
 def printDone():
     done_count = 0
-    undone_count = 0
     print("you done:")
     with open(".to", 'r') as fli:
         fli = load(fli)
