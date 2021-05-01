@@ -65,7 +65,7 @@ def printTask():
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
-                print('\t'+'all done')
+                print(tcolor.BLUE+'\t'+'all done')
 
 def printDone():
     done_count = 0
