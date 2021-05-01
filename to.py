@@ -7,8 +7,10 @@ command = str()
 
 while(command != "q" or command != "quit"):
     command = input(core.tcolor.NORMAL+"command (m for menu): ")
-    if(command == 'a'):
+    if(command == 'm'):
         core.menu()
+    elif(command == 'a'):
+        pass
     elif(command == 'i'):
         pass
     elif(command == 'e'):
