@@ -8,7 +8,7 @@ command = str()
 while(command != "q" or command != "quit"):
     command = input(core.tcolor.NORMAL+"command (m for menu): ")
     if(command == 'm'):
-        core.menu()
+        core.Menu()
     elif(command == 'a'):
         pass
     elif(command == 'i'):
@@ -18,13 +18,13 @@ while(command != "q" or command != "quit"):
     elif(command == 'c'):
         pass
     elif(command == 'd'):
-        pass
+        core.DoneTask()
     elif(command == 'p'):
-        core.printTask()
+        core.PrintTask()
     elif(command == 's'):
-        core.printDone()
+        core.PrintDone()
     elif(command == 'clear'):
-        core.clear()
+        core.Clear()
     elif(command == 'q'):
         quit()
     else:
