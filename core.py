@@ -102,11 +102,11 @@ def DoneTask():
                     fli['to'][tag][task_num-1]['done'] = 'True'
                     with open('.to', 'w') as fliw:
                         fliw.write(json.dumps(fli,indent=4))
+                        print(TColor.BLUE+'done')
                 else:
                     print(TColor.BLUE+"you did all the task's")
             else:
                 print(TColor.RED+'there is no task in this to')
-    print(TColor.BLUE+'done')
 
 
 
