@@ -6,7 +6,7 @@ import sys
 command = str()
 
 while(command != "q" or command != "quit"):
-    command = input(core.tcolor.NORMAL+"command (m for menu): ")
+    command = input(core.TColor.NORMAL+"command (m for menu): ")
     if(command == 'm'):
         core.Menu()
     elif(command == 'a'):
