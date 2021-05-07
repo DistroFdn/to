@@ -16,7 +16,7 @@ while(command != "q" or command != "quit"):
     elif(command == 'e'):
         pass
     elif(command == 'c'):
-        pass
+        core.CompletTo()
     elif(command == 'd'):
         core.DoneTask()
     elif(command == 'p'):

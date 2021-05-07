@@ -108,11 +108,22 @@ def DoneTask():
             else:
                 print(TColor.RED+'there is no task in this to')
 
-
-
-
-
-
+def CompletTo():
+    with open('.to', 'r') as fli:
+        tag_count = 1
+        fli = json.load(fli)
+        for i in list(fli['to'].keys()):
+            print(TColor.GREEN+str(tag_count)+". "+i)
+            tag_count += 1
+        which_to = int(input(TColor.NORMAL+'select to[0 to quit]: '))
+        if(which_to != 0):
+            tag = list(fli['to'].keys())[which_to-1]
+            for k in fli['to'][tag]:
+                k['done'] = 'True'
+            tmp_fli = (json.dumps(fli, indent=4))
+            with open('.to', 'w') as fliw:
+                fliw.write(tmp_fli)
+                print(TColor.BLUE+"done")
 
 
 
