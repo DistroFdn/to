@@ -106,7 +106,7 @@ def DoneTask():
                     print(TColor.BLUE+"you did all the task's")
             else:
                 print(TColor.RED+'there is no task in this to')
-
+    print(TColor.BLUE+'done')
 
 
 
