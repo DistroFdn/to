@@ -2,17 +2,17 @@
     "to": {
         "fix": [
             {
-                "done": "True",
+                "done": "False",
                 "task": "fix line 13 in module save",
                 "priority": 1
             },
             {
-                "done": "True",
+                "done": "False",
                 "task": "in main, fix the return data of second loop",
                 "priority": 2
             },
             {
-                "done": "True",
+                "done": "False",
                 "task": "change function that return a tuple to list",
                 "priority": 3
             },
@@ -29,6 +29,12 @@
                 "priority": 1
             }
         ],
-        "buy": []
+        "buy": [
+            {
+                "done": "True",
+                "task": "idk",
+                "priority": 2
+            }
+        ]
     }
 }

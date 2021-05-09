@@ -125,9 +125,24 @@ def CompletTo():
                 fliw.write(tmp_fli)
                 print(TColor.BLUE+"done")
 
-
-
-
-
-
-
+def InsertTask():
+    with open('.to', 'r') as fli:
+        tag_count = 1
+        pri = ('low','normal','high')
+        fli = json.loads(fli.read())
+        for i in fli['to'].keys():
+            print(TColor.CYAN+str(tag_count)+". "+i)
+            tag_count += 1
+        tag = int(input(TColor.NORMAL+"select a to[0 to quit]: "))
+        if(tag != 0):
+            tag = list(fli['to'].keys())[tag-1]
+            task = input(TColor.GREEN+'task: ')
+            for i in range(3):
+                print(TColor.BLUE+str(i+1) + ". " +pri[i])
+            priority = input(TColor.GREEN+'priority: ')
+            newtask = {"done":"False","task":task,"priority":int(priority)}
+            fli['to'][tag].append(newtask)
+            fli = (json.dumps(fli, indent=4))
+            with open('.to', 'w') as fliw:
+                fliw.write(fli)
+            

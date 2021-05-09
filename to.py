@@ -12,7 +12,7 @@ while(command != "q" or command != "quit"):
     elif(command == 'a'):
         pass
     elif(command == 'i'):
-        pass
+        core.InsertTask()
     elif(command == 'e'):
         pass
     elif(command == 'c'):
