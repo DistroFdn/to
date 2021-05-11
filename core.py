@@ -27,7 +27,7 @@ def Menu():
 
         done:
             c   completion an entire to
-            d   done one task from a to
+               done one task from a to
         
         print:
             p   print all todo's
@@ -145,4 +145,16 @@ def InsertTask():
             fli = (json.dumps(fli, indent=4))
             with open('.to', 'w') as fliw:
                 fliw.write(fli)
-            
+
+def AddTo():
+    with open('.to', 'r') as fli:
+        tag = input(TColor.GREEN+'to[0 to quit]: ')
+        if(tag != 0):
+            fli = json.load(fli)
+            fli['to'][tag] = []
+            fli = json.dumps(fli, indent=4)
+            with open('.to', 'w') as fliw:
+                fliw.write(fli)
+                print(TColor.BLUE+tag,'added')
+                # bug is if we have a tag, we can override it. it should fix
+                # if we input 0 it will add !?

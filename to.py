@@ -10,7 +10,7 @@ while(command != "q" or command != "quit"):
     if(command == 'm'):
         core.Menu()
     elif(command == 'a'):
-        pass
+        core.AddTo()
     elif(command == 'i'):
         core.InsertTask()
     elif(command == 'e'):
