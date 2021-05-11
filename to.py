@@ -27,5 +27,9 @@ while(command != "q" or command != "quit"):
         core.Clear()
     elif(command == 'q'):
         quit()
+    elif(command == 'prog'):
+        core.Progress()
+    elif(command == 'log'):
+        pass
     else:
         print(core.TColor.RED+'command is incorrect')

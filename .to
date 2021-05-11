@@ -3,11 +3,11 @@
         "fix": [
             {
                 "done": "False",
-                "task": "my mother told me, some day i will buy\u000f",
+                "task": "fix line 13 in module save",
                 "priority": 1
             },
             {
-                "done": "False",
+                "done": "True",
                 "task": "in main, fix the return data of second loop",
                 "priority": 2
             },
@@ -20,6 +20,11 @@
                 "done": "True",
                 "task": "just to test the program",
                 "priority": 3
+            },
+            {
+                "done": "False",
+                "task": "something",
+                "priority": 2
             }
         ],
         "add": [

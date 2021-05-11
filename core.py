@@ -29,7 +29,7 @@ def Menu():
             c   completion an entire to
             d   done one task from a to
             u   undone one task
-            
+
         print:
             p   print all todo's
             s  show task's wich you done
@@ -199,4 +199,16 @@ def Edit():
                         fliw.write(json.dumps(fli, indent=4))
                         print('done')
 
-
+def Progress():
+    with open('.to', 'r') as fli:
+        fli = json.load(fli)
+        for i in fli['to'].keys():
+            done_count = 0
+            for j in fli['to'][i]:
+                if(j['done'] == 'True'):
+                    done_count += 1
+            if(len(fli['to'][i]) != 0):
+                prog_bar = int((done_count / len(fli['to'][i])) * 100)
+                print(TColor.YELLOW + i + '. ' + str(prog_bar) + '%')
+            if(len(fli['to'][i]) == 0):
+                print(TColor.RED + i + '. ' + 'there is no task under this to')
