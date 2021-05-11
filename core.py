@@ -99,10 +99,11 @@ def DoneTask():
                         done_count += 1
                 if(done_count != 0):
                     task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
-                    fli['to'][tag][task_num-1]['done'] = 'True'
-                    with open('.to', 'w') as fliw:
-                        fliw.write(json.dumps(fli,indent=4))
-                        print(TColor.BLUE+'done')
+                    if(task_num != 0):
+                        fli['to'][tag][task_num-1]['done'] = 'True'
+                        with open('.to', 'w') as fliw:
+                            fliw.write(json.dumps(fli,indent=4))
+                            print(TColor.BLUE+'done')
                 else:
                     print(TColor.BLUE+"you did all the task's")
             else:
@@ -160,3 +161,36 @@ def AddTo():
                 with open('.to', 'w') as fliw:
                     fliw.write(fli)
                     print(TColor.GREEN+tag,'added')
+
+def Edit():
+    with open('.to', 'r') as fli:
+        task_count = 1
+        pri = ('low', 'normal', 'high')
+        fli = json.load(fli)
+        for i in range(len(fli['to'].keys())):
+            print(TColor.CYAN+str(i+1)+ '. ' + list(fli['to'].keys())[i])
+        tag = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
+        if(tag != 0):
+            tag = list(fli['to'].keys())[tag-1]
+            for i in fli['to'][tag]:
+                if(i['done'] == "True"):
+                    print(TColor.BLUE+str(task_count)+ '. ' +i['task'])
+                else:
+                    print(TColor.YELLOW+str(task_count)+ '. ' +i['task'])
+                task_count += 1
+            task_num = int(input(TColor.NORMAL+'select a task[0 to quit]: '))
+            if(task_num != 0):
+                print(TColor.PURPPLE+fli['to'][tag][task_num-1]['task'])
+                newtask = input(TColor.NORMAL+'type new task[0 to quit]: ')
+                if(newtask != '0'):
+                    for i in range(len(pri)):
+                        print(TColor.PURPPLE+str(i+1) + '. ' + pri[i])
+                    newpriority = int(input(TColor.NORMAL+'select new priority: '))-1
+                    newdone = fli['to'][tag][task_num-1]['done']
+                    newtask = {'done' : newdone,'task' : newtask, 'priority' : newpriority}
+                    fli['to'][tag][task_num-1] = newtask
+                    with open('.to', 'w') as fliw:
+                        fliw.write(json.dumps(fli, indent=4))
+                        print('done')
+
+

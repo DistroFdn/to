@@ -14,7 +14,7 @@ while(command != "q" or command != "quit"):
     elif(command == 'i'):
         core.InsertTask()
     elif(command == 'e'):
-        pass
+        core.Edit()
     elif(command == 'c'):
         core.CompletTo()
     elif(command == 'd'):
