@@ -149,7 +149,7 @@ def InsertTask():
 def AddTo():
     with open('.to', 'r') as fli:
         tag = input(TColor.GREEN+'to[0 to quit]: ')
-        if(tag != 0):
+        if(tag != '0'):
             fli = json.load(fli)
             fli['to'][tag] = []
             fli = json.dumps(fli, indent=4)
@@ -157,4 +157,3 @@ def AddTo():
                 fliw.write(fli)
                 print(TColor.BLUE+tag,'added')
                 # bug is if we have a tag, we can override it. it should fix
-                # if we input 0 it will add !?
