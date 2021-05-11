@@ -148,12 +148,15 @@ def InsertTask():
 
 def AddTo():
     with open('.to', 'r') as fli:
-        tag = input(TColor.GREEN+'to[0 to quit]: ')
-        if(tag != '0'):
+        tag = input(TColor.NORMAL+'to[0 to quit]: ').strip()
+        if(not tag in ['', '0']):
             fli = json.load(fli)
-            fli['to'][tag] = []
-            fli = json.dumps(fli, indent=4)
-            with open('.to', 'w') as fliw:
-                fliw.write(fli)
-                print(TColor.BLUE+tag,'added')
-                # bug is if we have a tag, we can override it. it should fix
+            tag_list = list(fli['to'].keys())
+            if(tag in tag_list):
+                print(TColor.RED+'this to is early declared')
+            else:
+                fli['to'][tag] = []
+                fli = json.dumps(fli, indent=4)
+                with open('.to', 'w') as fliw:
+                    fliw.write(fli)
+                    print(TColor.GREEN+tag,'added')
