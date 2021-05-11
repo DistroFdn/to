@@ -28,4 +28,4 @@ while(command != "q" or command != "quit"):
     elif(command == 'q'):
         quit()
     else:
-        pass
+        print(core.TColor.RED+'command is incorrect')

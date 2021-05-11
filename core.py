@@ -28,12 +28,18 @@ def Menu():
         done:
             c   completion an entire to
             d   done one task from a to
-        
+            u   undone one task
+            
         print:
             p   print all todo's
             s  show task's wich you done
             clear clear the screen
-            
+        
+        progress:
+            prog    show a percentage and a progress of what you done
+            log     show a log of what you done.
+
+
         quit and exit:
             q  exit
         """)
