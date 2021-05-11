@@ -13,12 +13,10 @@ git clone https://github.com/DistroTEAM/to && cd to
 
 - How to run
 
-Ok, now you have to know this:
-
-> use **python3 to.py -s** to run the app
+> use **./to.py** to run.
 > 
-> if you run this with no args, app will return you just help
+> this software now is in beta version, is mean it's contain bug's. we are doing our best to make it better.
 
 ---
 
-So, enjoy and give star :)
+we wish you enjoy of it.
