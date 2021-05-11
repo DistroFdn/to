@@ -27,7 +27,7 @@ def Menu():
 
         done:
             c   completion an entire to
-               done one task from a to
+            d   done one task from a to
         
         print:
             p   print all todo's
