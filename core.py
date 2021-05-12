@@ -7,10 +7,11 @@ from json import load
 
 def bar(min, max):
     bar = (min / max) * 100
+    tmp = bar
     spacebar = 100 - bar
-    spacebar = int(spacebar) * ' '
-    bar = int(bar) * '█'
-    print('[' + bar + spacebar + ']')
+    spacebar = int(spacebar) * '_'
+    bar = int(bar) * '|'
+    print(TColor.GREEN+'[' + bar + spacebar + ']',str(tmp)+'%')
 
 
 class TColor:
@@ -224,9 +225,5 @@ def Progress():
                 print(TColor.YELLOW + i + '. ' + str(prog_bar) + '%')
             if(len(fli['to'][i]) == 0):
                 print(TColor.RED + i + '. ' + 'there is no task under this to')
-        bar = (all_done_count / all_task_count) * 100
-        spacebar = 100 - bar
-        spacebar = int(spacebar) * '_'
-        bar = int(bar) * '█'
-        print('[' + bar + spacebar + ']')
+        bar(all_done_count, all_task_count)
 
