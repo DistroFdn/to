@@ -5,6 +5,14 @@ import os
 import sys
 from json import load
 
+def bar(min, max):
+    bar = (min / max) * 100
+    spacebar = 100 - bar
+    spacebar = int(spacebar) * ' '
+    bar = int(bar) * '█'
+    print('[' + bar + spacebar + ']')
+
+
 class TColor:
     PURPPLE = '\033[95m'
     BLUE = '\033[94m'
@@ -201,14 +209,24 @@ def Edit():
 
 def Progress():
     with open('.to', 'r') as fli:
+        all_done_count = 0
+        all_task_count = 0
         fli = json.load(fli)
         for i in fli['to'].keys():
             done_count = 0
             for j in fli['to'][i]:
+                all_task_count += 1
                 if(j['done'] == 'True'):
                     done_count += 1
+                    all_done_count += 1
             if(len(fli['to'][i]) != 0):
                 prog_bar = int((done_count / len(fli['to'][i])) * 100)
                 print(TColor.YELLOW + i + '. ' + str(prog_bar) + '%')
             if(len(fli['to'][i]) == 0):
                 print(TColor.RED + i + '. ' + 'there is no task under this to')
+        bar = (all_done_count / all_task_count) * 100
+        spacebar = 100 - bar
+        spacebar = int(spacebar) * '_'
+        bar = int(bar) * '█'
+        print('[' + bar + spacebar + ']')
+
