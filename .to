@@ -10,6 +10,11 @@
                 "done": "False",
                 "task": "in EditTask and all other task, if we choes an out of index number, program will crash",
                 "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "in edit changing properity is not working.",
+                "priority": 3
             }
         ],
         "add": [
@@ -46,6 +51,11 @@
             {
                 "done": "False",
                 "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9.",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "we shoud add a space seprator for add anything simply in a rang",
                 "priority": 2
             }
         ],
