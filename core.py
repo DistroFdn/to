@@ -7,14 +7,14 @@ from json import load
 import os
 
 def CheckFile(init):
-    if(init == True):
         if(not os.path.isfile('.to')):
-            struct = {'to':{}}
-            with open('.to', 'w') as fli:
-                fli.write(json.dumps(struct, indent=4))
-    else:
-        print(TColor.RED+'Error: first add a to')
-        sys.exit(2)
+            if(init == True):
+                struct = {'to':{}}
+                with open('.to', 'w') as fli:
+                    fli.write(json.dumps(struct, indent=4))
+            else:
+                print(TColor.RED+'Error: first add a to')
+                sys.exit(2)
 
 def bar(min, max):
     bar = (min / max) * 100
