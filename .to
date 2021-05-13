@@ -1,16 +1,65 @@
 {
-    "to":{
-        "fix":[
-                {"done":"False", "task":"fix line 13 in module save", "priority":1},
-                {"done":"False", "task":"in main, fix the return data of second loop", "priority":2},
-                {"done":"False", "task":"change function that return a tuple to list", "priority":3},
-                {"done":"True", "task":"just to test the program", "priority":3}
-              ],
-        "add":[
-                {"done":"True", "task":"add a save module to save file", "priority":1}
-              ],
-        "buy":[
-                
-              ]
-        }
+    "to": {
+        "fix": [
+            {
+                "done": "False",
+                "task": "in prog func there is a error, this error is made when there is no task under the to's",
+                "priority": 1
+            },
+            {
+                "done": "False",
+                "task": "in EditTask and all other task, if we choes an out of index number, program will crash",
+                "priority": 2
+            }
+        ],
+        "add": [
+            {
+                "done": "False",
+                "task": "a pretty graphical log",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "a ctrl+c to cancel",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "a deadline and donetime to log",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "undone for a task and/or a to",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "argspars for pars args",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "for git, a pretty commit massager filling",
+                "priority": 2
+            }
+        ],
+        "log": [
+            {
+                "done": "False",
+                "task": "progress",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "done time",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "who done what",
+                "priority": 2
+            }
+        ]
+    }
 }
