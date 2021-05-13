@@ -4,6 +4,17 @@ import json
 import os
 import sys
 from json import load
+import os
+
+def CheckFile(init):
+    if(init == True):
+        if(not os.path.isfile('.to')):
+            struct = {'to':{}}
+            with open('.to', 'w') as fli:
+                fli.write(json.dumps(struct, indent=4))
+    else:
+        print(TColor.RED+'Error: first add a to')
+        sys.exit(2)
 
 def bar(min, max):
     bar = (min / max) * 100
@@ -57,6 +68,7 @@ def Clear():
         os.system('clear')
 
 def PrintTask():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         fli = load(fli)
         lstto = list(fli['to'].keys())
@@ -80,6 +92,7 @@ def PrintTask():
                 print(TColor.BLUE+'\t'+'all done')
 
 def PrintDone():
+    CheckFile(False)
     done_count = 0
     print("you done:")
     with open(".to", 'r') as fli:
@@ -94,6 +107,7 @@ def PrintDone():
     print(TColor.BLUE+"\n"+str(done_count) + " task done")
 
 def DoneTask():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         to_count = 1
         fli = json.load(fli)
@@ -124,6 +138,7 @@ def DoneTask():
                 print(TColor.RED+'there is no task in this to')
 
 def CompletTo():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         tag_count = 1
         fli = json.load(fli)
@@ -141,6 +156,7 @@ def CompletTo():
                 print(TColor.BLUE+"done")
 
 def InsertTask():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         tag_count = 1
         pri = ('low','normal','high')
@@ -162,6 +178,7 @@ def InsertTask():
                 fliw.write(fli)
 
 def AddTo():
+    CheckFile(True)
     with open('.to', 'r') as fli:
         tag = input(TColor.NORMAL+'to[0 to quit]: ').strip()
         if(not tag in ['', '0']):
@@ -177,6 +194,7 @@ def AddTo():
                     print(TColor.GREEN+tag,'added')
 
 def Edit():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         task_count = 1
         pri = ('low', 'normal', 'high')
@@ -208,6 +226,7 @@ def Edit():
                         print('done')
 
 def Progress():
+    CheckFile(False)
     with open('.to', 'r') as fli:
         all_done_count = 0
         all_task_count = 0
