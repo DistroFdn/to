@@ -2,7 +2,7 @@
     "to": {
         "fix": [
             {
-                "done": "False",
+                "done": "True",
                 "task": "in prog func there is a error, this error is made when there is no task under the to's",
                 "priority": 1
             },
@@ -40,7 +40,12 @@
             },
             {
                 "done": "False",
-                "task": "for git, a pretty commit massager filling",
+                "task": "for git, a pretty commit massage filler",
+                "priority": 1
+            },
+            {
+                "done": "False",
+                "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9.",
                 "priority": 2
             }
         ],
