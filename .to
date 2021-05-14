@@ -15,6 +15,11 @@
                 "done": "False",
                 "task": "in edit changing properity is not working.",
                 "priority": 3
+            },
+            {
+                "done": "False",
+                "task": "whene we get data in any where, we cant use arrow key to edit. fix it.",
+                "priority": 2
             }
         ],
         "add": [
@@ -57,6 +62,11 @@
                 "done": "False",
                 "task": "we shoud add a space seprator for add anything simply in a rang",
                 "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "all module which need to get data shoud get args in function, because we need a GUI we have to do it.",
+                "priority": 3
             }
         ],
         "log": [
