@@ -67,6 +67,16 @@
                 "done": "False",
                 "task": "all module which need to get data shoud get args in function, because we need a GUI we have to do it.",
                 "priority": 3
+            },
+            {
+                "done": "False",
+                "task": "a file in ~/.local/share/to/to.conf this file will tell us who done what. in .to file we will have a key and value which show who done what.",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "a function that add a table to readme.md file. this func is usefull for github. because it will show what shoud be done. with this no one will need to install this program to read .to file.",
+                "priority": 2
             }
         ],
         "log": [
