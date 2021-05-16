@@ -217,7 +217,7 @@ def Edit():
                 if(newtask != '0'):
                     for i in range(len(pri)):
                         print(TColor.PURPPLE+str(i+1) + '. ' + pri[i])
-                    newpriority = int(input(TColor.NORMAL+'select new priority: '))-1
+                    newpriority = int(input(TColor.NORMAL+'select new priority: '))
                     newdone = fli['to'][tag][task_num-1]['done']
                     newtask = {'done' : newdone,'task' : newtask, 'priority' : newpriority}
                     fli['to'][tag][task_num-1] = newtask
