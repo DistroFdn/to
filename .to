@@ -12,7 +12,7 @@
                 "priority": 2
             },
             {
-                "done": "False",
+                "done": "True",
                 "task": "in edit changing properity is not working.",
                 "priority": 2
             },
