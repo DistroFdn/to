@@ -5,6 +5,7 @@ import os
 import sys
 from json import load
 import os
+import datetime
 
 def CheckFile(init):
         if(not os.path.isfile('.to')):
@@ -171,7 +172,14 @@ def InsertTask():
             for i in range(3):
                 print(TColor.BLUE+str(i+1) + ". " +pri[i])
             priority = input(TColor.GREEN+'priority: ')
-            newtask = {"done":"False","task":task,"priority":int(priority)}
+            check_date = True
+            while check_date:
+                        deadline = input(TColor.GREEN+f'Deadline(today: {datetime.date.today()}): ')
+                        if str(deadline).split('-') >= str(datetime.date.today()).split('-'):
+                                    check_date = False
+                                    break
+                        print(TColor.RED+f'{deadline} Expired, Enter a date from the future')
+            newtask = {"done":"False","task":task,"priority":int(priority), "deadline":deadline}
             fli['to'][tag].append(newtask)
             fli = (json.dumps(fli, indent=4))
             with open('.to', 'w') as fliw:
