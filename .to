@@ -118,8 +118,7 @@
             {
                 "done": "True",
                 "task": "just for test the deadline",
-                "priority": 2,
-                "deadline": "2021-05-18"
+                "priority": 2
             }
         ]
     }

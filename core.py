@@ -109,130 +109,145 @@ def PrintDone():
     print(TColor.BLUE+"\n"+str(done_count) + " task done")
 
 def DoneTask():
-    CheckFile(False)
-    with open('.to', 'r') as fli:
-        to_count = 1
-        fli = json.load(fli)
-        for i in fli['to'].keys():
-            print(TColor.CYAN+str(to_count)+". "+i)
-            to_count += 1
-        which_to = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
-        if(which_to != 0):
-            task_count = 0
-            done_count = 0
-            tag = list(fli['to'].keys())[which_to-1]
-            if(len(fli['to'][tag]) != 0):
-                for i in fli['to'][tag]:
-                    task_count += 1
-                    if(i['done'] == "False"):
-                        print(TColor.YELLOW+str(task_count)+". "+i['task'])
-                        done_count += 1
-                if(done_count != 0):
-                    task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
-                    if(task_num != 0):
-                        fli['to'][tag][task_num-1]['done'] = 'True'
-                        with open('.to', 'w') as fliw:
-                            fliw.write(json.dumps(fli,indent=4))
-                            print(TColor.BLUE+'done')
+    try:
+        CheckFile(False)
+        with open('.to', 'r') as fli:
+            to_count = 1
+            fli = json.load(fli)
+            for i in fli['to'].keys():
+                print(TColor.CYAN+str(to_count)+". "+i)
+                to_count += 1
+            which_to = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
+            if(which_to != 0):
+                task_count = 0
+                done_count = 0
+                tag = list(fli['to'].keys())[which_to-1]
+                if(len(fli['to'][tag]) != 0):
+                    for i in fli['to'][tag]:
+                        task_count += 1
+                        if(i['done'] == "False"):
+                            print(TColor.YELLOW+str(task_count)+". "+i['task'])
+                            done_count += 1
+                    if(done_count != 0):
+                        task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
+                        if(task_num != 0):
+                            fli['to'][tag][task_num-1]['done'] = 'True'
+                            with open('.to', 'w') as fliw:
+                                fliw.write(json.dumps(fli,indent=4))
+                                print(TColor.BLUE+'done')
+                    else:
+                        print(TColor.BLUE+"you did all the task's")
                 else:
-                    print(TColor.BLUE+"you did all the task's")
-            else:
-                print(TColor.RED+'there is no task in this to')
+                    print(TColor.RED+'there is no task in this to')
+    except Exception as e:
+        print(TColor.RED+str(e))
 
 def CompletTo():
-    CheckFile(False)
-    with open('.to', 'r') as fli:
-        tag_count = 1
-        fli = json.load(fli)
-        for i in list(fli['to'].keys()):
-            print(TColor.GREEN+str(tag_count)+". "+i)
-            tag_count += 1
-        which_to = int(input(TColor.NORMAL+'select to[0 to quit]: '))
-        if(which_to != 0):
-            tag = list(fli['to'].keys())[which_to-1]
-            for k in fli['to'][tag]:
-                k['done'] = 'True'
-            tmp_fli = (json.dumps(fli, indent=4))
-            with open('.to', 'w') as fliw:
-                fliw.write(tmp_fli)
-                print(TColor.BLUE+"done")
+    try:
+        CheckFile(False)
+        with open('.to', 'r') as fli:
+            tag_count = 1
+            fli = json.load(fli)
+            for i in list(fli['to'].keys()):
+                print(TColor.GREEN+str(tag_count)+". "+i)
+                tag_count += 1
+            which_to = int(input(TColor.NORMAL+'select to[0 to quit]: '))
+            if(which_to != 0):
+                tag = list(fli['to'].keys())[which_to-1]
+                for k in fli['to'][tag]:
+                    k['done'] = 'True'
+                tmp_fli = (json.dumps(fli, indent=4))
+                with open('.to', 'w') as fliw:
+                    fliw.write(tmp_fli)
+                    print(TColor.BLUE+"done")
+    except Exception as e:
+        print(TColor.RED+str(e))
 
 def InsertTask():
-    CheckFile(False)
-    with open('.to', 'r') as fli:
-        tag_count = 1
-        pri = ('low','normal','high')
-        fli = json.loads(fli.read())
-        for i in fli['to'].keys():
-            print(TColor.CYAN+str(tag_count)+". "+i)
-            tag_count += 1
-        tag = int(input(TColor.NORMAL+"select a to[0 to quit]: "))
-        if(tag != 0):
-            tag = list(fli['to'].keys())[tag-1]
-            task = input(TColor.GREEN+'task: ')
-            for i in range(3):
-                print(TColor.BLUE+str(i+1) + ". " +pri[i])
-            priority = input(TColor.GREEN+'priority: ')
-            check_date = True
-            while check_date:
-                        deadline = input(TColor.GREEN+f'Deadline(today: {datetime.date.today()}): ')
-                        if str(deadline).split('-') >= str(datetime.date.today()).split('-'):
-                                    check_date = False
-                                    break
-                        print(TColor.RED+f'{deadline} Expired, Enter a date from the future')
-            newtask = {"done":"False","task":task,"priority":int(priority), "deadline":deadline}
-            fli['to'][tag].append(newtask)
-            fli = (json.dumps(fli, indent=4))
-            with open('.to', 'w') as fliw:
-                fliw.write(fli)
-
-def AddTo():
-    CheckFile(True)
-    with open('.to', 'r') as fli:
-        tag = input(TColor.NORMAL+'to[0 to quit]: ').strip()
-        if(not tag in ['', '0']):
-            fli = json.load(fli)
-            tag_list = list(fli['to'].keys())
-            if(tag in tag_list):
-                print(TColor.RED+'this to is early declared')
-            else:
-                fli['to'][tag] = []
-                fli = json.dumps(fli, indent=4)
+    try:
+        CheckFile(False)
+        with open('.to', 'r') as fli:
+            tag_count = 1
+            pri = ('low','normal','high')
+            fli = json.loads(fli.read())
+            for i in fli['to'].keys():
+                print(TColor.CYAN+str(tag_count)+". "+i)
+                tag_count += 1
+            tag = int(input(TColor.NORMAL+"select a to[0 to quit]: "))
+            if(tag != 0):
+                tag = list(fli['to'].keys())[tag-1]
+                task = input(TColor.GREEN+'task: ')
+                for i in range(3):
+                    print(TColor.BLUE+str(i+1) + ". " +pri[i])
+                priority = input(TColor.GREEN+'priority: ')
+                check_date = True
+                while check_date:
+                            deadline = input(TColor.GREEN+f'Deadline(today: {datetime.date.today()}): ')
+                            if str(deadline).split('-') >= str(datetime.date.today()).split('-'):
+                                        check_date = False
+                                        break
+                            print(TColor.RED+f'{deadline} Expired, Enter a date from the future')
+                newtask = {"done":"False","task":task,"priority":int(priority), "deadline":deadline}
+                fli['to'][tag].append(newtask)
+                fli = (json.dumps(fli, indent=4))
                 with open('.to', 'w') as fliw:
                     fliw.write(fli)
-                    print(TColor.GREEN+tag,'added')
+    except Exception as e:
+        print(TColor.RED+str(e))
+
+def AddTo():
+    try:
+        CheckFile(True)
+        with open('.to', 'r') as fli:
+            tag = input(TColor.NORMAL+'to[0 to quit]: ').strip()
+            if(not tag in ['', '0']):
+                fli = json.load(fli)
+                tag_list = list(fli['to'].keys())
+                if(tag in tag_list):
+                    print(TColor.RED+'this to is early declared')
+                else:
+                    fli['to'][tag] = []
+                    fli = json.dumps(fli, indent=4)
+                    with open('.to', 'w') as fliw:
+                        fliw.write(fli)
+                        print(TColor.GREEN+tag,'added')
+    except Exception as e:
+        print(TColor.RED+str(e))
 
 def Edit():
-    CheckFile(False)
-    with open('.to', 'r') as fli:
-        task_count = 1
-        pri = ('low', 'normal', 'high')
-        fli = json.load(fli)
-        for i in range(len(fli['to'].keys())):
-            print(TColor.CYAN+str(i+1)+ '. ' + list(fli['to'].keys())[i])
-        tag = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
-        if(tag != 0):
-            tag = list(fli['to'].keys())[tag-1]
-            for i in fli['to'][tag]:
-                if(i['done'] == "True"):
-                    print(TColor.BLUE+str(task_count)+ '. ' +i['task'])
-                else:
-                    print(TColor.YELLOW+str(task_count)+ '. ' +i['task'])
-                task_count += 1
-            task_num = int(input(TColor.NORMAL+'select a task[0 to quit]: '))
-            if(task_num != 0):
-                print(TColor.PURPPLE+fli['to'][tag][task_num-1]['task'])
-                newtask = input(TColor.NORMAL+'type new task[0 to quit]: ')
-                if(newtask != '0'):
-                    for i in range(len(pri)):
-                        print(TColor.PURPPLE+str(i+1) + '. ' + pri[i])
-                    newpriority = int(input(TColor.NORMAL+'select new priority: '))
-                    newdone = fli['to'][tag][task_num-1]['done']
-                    newtask = {'done' : newdone,'task' : newtask, 'priority' : newpriority}
-                    fli['to'][tag][task_num-1] = newtask
-                    with open('.to', 'w') as fliw:
-                        fliw.write(json.dumps(fli, indent=4))
-                        print('done')
+    try:
+        CheckFile(False)
+        with open('.to', 'r') as fli:
+            task_count = 1
+            pri = ('low', 'normal', 'high')
+            fli = json.load(fli)
+            for i in range(len(fli['to'].keys())):
+                print(TColor.CYAN+str(i+1)+ '. ' + list(fli['to'].keys())[i])
+            tag = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
+            if(tag != 0):
+                tag = list(fli['to'].keys())[tag-1]
+                for i in fli['to'][tag]:
+                    if(i['done'] == "True"):
+                        print(TColor.BLUE+str(task_count)+ '. ' +i['task'])
+                    else:
+                        print(TColor.YELLOW+str(task_count)+ '. ' +i['task'])
+                    task_count += 1
+                task_num = int(input(TColor.NORMAL+'select a task[0 to quit]: '))
+                if(task_num != 0):
+                    print(TColor.PURPPLE+fli['to'][tag][task_num-1]['task'])
+                    newtask = input(TColor.NORMAL+'type new task[0 to quit]: ')
+                    if(newtask != '0'):
+                        for i in range(len(pri)):
+                            print(TColor.PURPPLE+str(i+1) + '. ' + pri[i])
+                        newpriority = int(input(TColor.NORMAL+'select new priority: '))
+                        newdone = fli['to'][tag][task_num-1]['done']
+                        newtask = {'done' : newdone,'task' : newtask, 'priority' : newpriority}
+                        fli['to'][tag][task_num-1] = newtask
+                        with open('.to', 'w') as fliw:
+                            fliw.write(json.dumps(fli, indent=4))
+                            print('done')
+    except Exception as e:
+        print(TColor.RED+str(e))
 
 def Progress():
     CheckFile(False)
