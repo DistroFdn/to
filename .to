@@ -51,7 +51,7 @@
                 "priority": 2
             },
             {
-                "done": "False",
+                "done": "True",
                 "task": "undone for a task and/or a to",
                 "priority": 2
             },
@@ -119,6 +119,12 @@
                 "done": "True",
                 "task": "just for test the deadline",
                 "priority": 2
+            },
+            {
+                "done": "True",
+                "task": "to test the UnDone()",
+                "priority": 2,
+                "deadline": "2021-05-19"
             }
         ]
     }

@@ -270,3 +270,36 @@ def Progress():
         print(TColor.YELLOW + 'All:', end=' ')
         bar(all_done_count, all_task_count)
 
+def UnDoneTask():
+    try:
+        CheckFile(False)
+        with open('.to', 'r') as fli:
+            to_count = 1
+            fli = json.load(fli)
+            for i in fli['to'].keys():
+                print(TColor.CYAN+str(to_count)+". "+i)
+                to_count += 1
+            which_to = int(input(TColor.NORMAL+'select a to[0 to quit]: '))
+            if(which_to != 0):
+                task_count = 0
+                undone_count = 0
+                tag = list(fli['to'].keys())[which_to-1]
+                if(len(fli['to'][tag]) != 0):
+                    for i in fli['to'][tag]:
+                        task_count += 1
+                        if(i['done'] == "True"):
+                            print(TColor.YELLOW+str(task_count)+". "+i['task'])
+                            undone_count += 1
+                    if(undone_count != 0):
+                        task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
+                        if(task_num != 0):
+                            fli['to'][tag][task_num-1]['done'] = 'False'
+                            with open('.to', 'w') as fliw:
+                                fliw.write(json.dumps(fli,indent=4))
+                                print(TColor.BLUE+'undoned')
+                    else:
+                        print(TColor.BLUE+"you didn't do anything")
+                else:
+                    print(TColor.RED+'there is no task in this to')
+    except Exception as e:
+        print(TColor.RED+str(e))

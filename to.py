@@ -19,6 +19,8 @@ while(command != "q" or command != "quit"):
         core.CompletTo()
     elif(command == 'd'):
         core.DoneTask()
+    elif(command == 'u'):
+        core.UnDoneTask()
     elif(command == 'p'):
         core.PrintTask()
     elif(command == 's'):
