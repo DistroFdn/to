@@ -24,6 +24,7 @@ def bar(min, max):
     spacebar = int(spacebar) * '_'
     bar = int(bar) * '|'
     print(TColor.GREEN+'[' + bar + spacebar + ']',str(tmp)+'%')
+    print('\n')
 
 class TColor:
     PURPPLE = '\033[95m'
