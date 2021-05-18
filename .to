@@ -51,7 +51,7 @@
             {
                 "done": "False",
                 "task": "for git, a pretty commit massage filler",
-                "priority": 1
+                "priority": 2
             },
             {
                 "done": "False",
@@ -94,6 +94,14 @@
                 "done": "False",
                 "task": "who done what",
                 "priority": 2
+            }
+        ],
+        "test": [
+            {
+                "done": "False",
+                "task": "just for test the deadline",
+                "priority": 2,
+                "deadline": "2021-05-18"
             }
         ]
     }
