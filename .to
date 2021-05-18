@@ -20,6 +20,18 @@
                 "done": "False",
                 "task": "whene we get data in any where, we cant use arrow key to edit. fix it.",
                 "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "deadline shoud get a noneday.",
+                "priority": 2,
+                "deadline": "2021-05-18"
+            },
+            {
+                "done": "False",
+                "task": "if a task is near to deadline, we shoud show it.",
+                "priority": 2,
+                "deadline": "2077-0-0"
             }
         ],
         "add": [
@@ -77,6 +89,12 @@
                 "done": "False",
                 "task": "a function that add a table to readme.md file. this func is usefull for github. because it will show what shoud be done. with this no one will need to install this program to read .to file.",
                 "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "we need some method to indicate specify day's. like: tomorow(), today(), 2d, 2w, [n]m, [n]y",
+                "priority": 2,
+                "deadline": "2021-05-18"
             }
         ],
         "log": [
@@ -98,7 +116,7 @@
         ],
         "test": [
             {
-                "done": "False",
+                "done": "True",
                 "task": "just for test the deadline",
                 "priority": 2,
                 "deadline": "2021-05-18"
