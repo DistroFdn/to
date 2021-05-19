@@ -180,6 +180,7 @@ def InsertTask():
                 for i in range(3):
                     print(TColor.BLUE+str(i+1) + ". " +pri[i])
                 priority = input(TColor.GREEN+'priority: ')
+                start_date = input(TColor.GREEN+f'start date (today: {datetime.date.today()}): ')
                 check_y =True
                 while check_y:
                             deadline_y = input(TColor.GREEN+f'Deadline Years: ')
@@ -203,17 +204,20 @@ def InsertTask():
                                         check_w = False
                                         break
                             print(TColor.RED+f'Weeks should be less than 4 and greater than or equal to 0')
-                            
+                min_day = 1
+                if(int(deadline_y) > 0 or int(deadline_m) > 0 or int(deadline_w) > 0):
+                            min_day = 0
                 check_d =True
                 while check_d:
                             deadline_d = input(TColor.GREEN+f'Deadline Days: ')
-                            if (int(deadline_d) < 7) and (int(deadline_d) > 0):
+                            if (int(deadline_d) < 7) and (int(deadline_d) >= min_day):
                                         check_d = False
                                         break
-                            print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
+                            print(TColor.RED+f'Days should be less than 7 and greater than or equal to {min_day}')
                             
                 newtask = {
                     "done":"False","task":task,"priority":int(priority),
+                    "start_date":start_date,
                     "deadline":{
                         "y":deadline_y,
                         "m":deadline_m,

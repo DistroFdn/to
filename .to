@@ -125,6 +125,42 @@
                 "task": "to test the UnDone()",
                 "priority": 2,
                 "deadline": "2021-05-19"
+            },
+            {
+                "done": "False",
+                "task": "tsk4",
+                "priority": 1,
+                "start_date": "2021-05-21",
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "1"
+                }
+            },
+            {
+                "done": "False",
+                "task": "tsk5",
+                "priority": 2,
+                "start_date": "2021-05-20",
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "2"
+                }
+            },
+            {
+                "done": "False",
+                "task": "tsk6",
+                "priority": 3,
+                "start_date": "2021-05-19",
+                "deadline": {
+                    "y": "1",
+                    "m": "0",
+                    "w": "0",
+                    "d": "0"
+                }
             }
         ]
     }
