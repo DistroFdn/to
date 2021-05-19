@@ -125,6 +125,33 @@
                 "task": "to test the UnDone()",
                 "priority": 2,
                 "deadline": "2021-05-19"
+            },
+            {
+                "done": "True",
+                "task": "just to test",
+                "priority": 2,
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "1"
+                }
+            },
+            {
+                "done": "True",
+                "task": "test the begin time",
+                "priority": 2,
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "1"
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
             }
         ]
     }

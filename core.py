@@ -5,7 +5,19 @@ import os
 import sys
 from json import load
 import os
-import datetime
+from datetime import datetime
+
+def CheckTime():
+    pass
+    # this fuction will return a expaire time.
+
+def SetTime():
+    start_time = {
+    'y' : datetime.now().year,
+    'm' : datetime.now().month,
+    'd' : datetime.now().day
+    }
+    return start_time
 
 def CheckFile(init):
         if(not os.path.isfile('.to')):
@@ -83,11 +95,11 @@ def PrintTask():
                 if(j['done']=='False'):
                     todo_count += 1
                     if(j['priority'] == 1):
-                        print(TColor.GREEN+"\t"+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.GREEN+"\t"+'|'+str(todo_count)+"."+j['task'])
                     elif(j['priority'] == 2):
-                        print(TColor.YELLOW+"\t"+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.YELLOW+"\t"+'|'+str(todo_count)+"."+j['task'])
                     elif(j['priority'] == 3):
-                        print(TColor.RED+"\t"+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.RED+"\t"+'|'+str(todo_count)+"."+j['task'])
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
@@ -219,7 +231,8 @@ def InsertTask():
                         "m":deadline_m,
                         "w":deadline_w,
                         "d":deadline_d,
-                    }
+                    },
+                    'begintime':SetTime()
                     }
                 fli['to'][tag].append(newtask)
                 fli = (json.dumps(fli, indent=4))
