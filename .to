@@ -32,6 +32,22 @@
                 "task": "if a task is near to deadline, we shoud show it.",
                 "priority": 2,
                 "deadline": "2077-0-0"
+            },
+            {
+                "done": "False",
+                "task": "in line's that you get a deadline you typecast two time, but if you typecast exact after the input, cpu will be more free.",
+                "priority": 3,
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "1"
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
             }
         ],
         "add": [
@@ -95,6 +111,22 @@
                 "task": "we need some method to indicate specify day's. like: tomorow(), today(), 2d, 2w, [n]m, [n]y",
                 "priority": 2,
                 "deadline": "2021-05-18"
+            },
+            {
+                "done": "False",
+                "task": "we shoud calculate how much time we have to done something, this should show whene we print all task and to.",
+                "priority": 2,
+                "deadline": {
+                    "y": "0",
+                    "m": "0",
+                    "w": "0",
+                    "d": "1"
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
             }
         ],
         "log": [
