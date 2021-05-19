@@ -95,28 +95,6 @@
                 "task": "we need some method to indicate specify day's. like: tomorow(), today(), 2d, 2w, [n]m, [n]y",
                 "priority": 2,
                 "deadline": "2021-05-18"
-            },
-            {
-                "done": "False",
-                "task": "tsk2",
-                "priority": 3,
-                "deadline": {
-                    "y": "1",
-                    "m": "0",
-                    "w": "3",
-                    "d": "2"
-                }
-            },
-            {
-                "done": "False",
-                "task": "tsk3",
-                "priority": 1,
-                "deadline": {
-                    "y": "0",
-                    "m": "0",
-                    "w": "0",
-                    "d": "1"
-                }
             }
         ],
         "log": [
