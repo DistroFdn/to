@@ -184,6 +184,96 @@
                     "m": 5,
                     "d": 20
                 }
+            },
+            {
+                "done": "True",
+                "task": "this is a test for add the deadline date",
+                "priority": 2,
+                "deadline": {
+                    "y": 2023,
+                    "m": 6,
+                    "d": 35
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
+            },
+            {
+                "done": "True",
+                "task": "this another test for deadline day",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 28
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
+            },
+            {
+                "done": "True",
+                "task": "test the new deadline and begintime",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 6.133333333333333,
+                    "d": 38
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
+            },
+            {
+                "done": "True",
+                "task": "this is a test for deadline",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 6,
+                    "d": 38
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
+            },
+            {
+                "done": "True",
+                "task": "test for deadline",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 6,
+                    "d": 4
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
+            },
+            {
+                "done": "True",
+                "task": "test",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 6,
+                    "d": 7
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 20
+                }
             }
         ]
     }
