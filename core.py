@@ -7,9 +7,10 @@ from json import load
 import os
 from datetime import datetime
 
-def CheckTime():
-    pass
+def CheckTime(task):
     # this fuction will return a expaire time.
+    # task['']
+    pass
 
 def SetTime():
     start_time = {
@@ -194,43 +195,53 @@ def InsertTask():
                 priority = input(TColor.GREEN+'priority: ')
                 check_y =True
                 while check_y:
-                            deadline_y = input(TColor.GREEN+f'Deadline Years: ')
-                            if (int(deadline_y) < 5) and (int(deadline_y) >= 0):
+                            deadline_y = int(input(TColor.GREEN+f'Deadline Years: '))
+                            if (deadline_y < 5) and (deadline_y) >= 0:
                                         check_y = False
                                         break
                             print(TColor.RED+f'{deadline_y} years is too far, should be less than 5 years and greater than or equal to 0')
                 
                 check_m =True
                 while check_m:
-                            deadline_m = input(TColor.GREEN+f'Deadline Months: ')
-                            if (int(deadline_m) < 12) and (int(deadline_m) >= 0):
+                            deadline_m = int(input(TColor.GREEN+f'Deadline Months: '))
+                            if ((deadline_m) < 12) and ((deadline_m) >= 0):
                                         check_m = False
                                         break
                             print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
                 
                 check_w =True
                 while check_w:
-                            deadline_w = input(TColor.GREEN+f'Deadline Weeks: ')
-                            if (int(deadline_w) < 4) and (int(deadline_w) >= 0):
+                            deadline_w = int(input(TColor.GREEN+f'Deadline Weeks: '))
+                            if ((deadline_w) <= 4) and ((deadline_w) >= 0):
+                                        deadline_w = deadline_w * 7
                                         check_w = False
                                         break
-                            print(TColor.RED+f'Weeks should be less than 4 and greater than or equal to 0')
+                            print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
                             
                 check_d =True
                 while check_d:
-                            deadline_d = input(TColor.GREEN+f'Deadline Days: ')
-                            if (int(deadline_d) < 7) and (int(deadline_d) > 0):
+                            deadline_d = int(input(TColor.GREEN+f'Deadline Days: '))
+                            if ((deadline_d) < 7) and ((deadline_d) >= 0):
+                                tmp = deadline_w + deadline_d
+                                if(tmp <= 30):
                                         check_d = False
-                                        break
+                                        tmp += datetime.now().day
+                                        if(tmp <= 30):
+                                            break
+                                        else:
+                                            deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
+                                            deadline_d = (deadline_d + deadline_w + datetime.now().day) % 30
+                                            break
+                                else:
+                                    print(TColor.RED+'Sum of days and weeks is greater than 30')
                             print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
                             
                 newtask = {
                     "done":"False","task":task,"priority":int(priority),
                     "deadline":{
-                        "y":deadline_y,
-                        "m":deadline_m,
-                        "w":deadline_w,
-                        "d":deadline_d,
+                        "y":datetime.now().year + deadline_y,
+                        "m":datetime.now().month + deadline_m,
+                        "d":deadline_d
                     },
                     'begintime':SetTime()
                     }
