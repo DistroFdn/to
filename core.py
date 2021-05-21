@@ -8,10 +8,11 @@ import os
 from datetime import datetime, date
 
 def TimeLeft(task):
-    beginline = date(task['begintime']['y'], task['begintime']['m'], task['begintime']['d'])
+    NOW = datetime.now()
+    nowline = date(NOW.year, NOW.month, NOW.day)
     deadline = date(task['deadline']['y'], task['deadline']['m'], task['deadline']['d'])
     # an object will return which have some property like: day
-    return deadline - beginline
+    return deadline - nowline
 
 def SetTime():
     start_time = {
