@@ -5,12 +5,13 @@ import os
 import sys
 from json import load
 import os
-from datetime import datetime
+from datetime import datetime, date
 
-def CheckTime(task):
-    # this fuction will return a expaire time.
-    # task['']
-    pass
+def TimeLeft(task):
+    beginline = date(task['begintime']['y'], task['begintime']['m'], task['begintime']['d'])
+    deadline = date(task['deadline']['y'], task['deadline']['m'], task['deadline']['d'])
+    # an object will return which have some property like: day
+    return deadline - beginline
 
 def SetTime():
     start_time = {
@@ -96,11 +97,14 @@ def PrintTask():
                 if(j['done']=='False'):
                     todo_count += 1
                     if(j['priority'] == 1):
-                        print('\n'+TColor.GREEN+"\t"+'|'+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.GREEN+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
+                        print('\t'+str(TimeLeft(j).days)+'days left')
                     elif(j['priority'] == 2):
-                        print('\n'+TColor.YELLOW+"\t"+'|'+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.YELLOW+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
+                        print('\t'+str(TimeLeft(j).days)+'days left')
                     elif(j['priority'] == 3):
-                        print('\n'+TColor.RED+"\t"+'|'+str(todo_count)+"."+j['task'])
+                        print('\n'+TColor.RED+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
+                        print('\t'+str(TimeLeft(j).days)+'days left')
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
