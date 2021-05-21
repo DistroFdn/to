@@ -228,9 +228,9 @@ def InsertTask():
                             if ((deadline_d) < 7) and ((deadline_d) >= 0):
                                 tmp = deadline_w + deadline_d
                                 if(tmp <= 30):
-                                        check_d = False
                                         tmp += datetime.now().day
                                         if(tmp <= 30):
+                                            deadline_d = (deadline_d + datetime.now().day)
                                             break
                                         else:
                                             deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
