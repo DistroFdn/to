@@ -10,33 +10,45 @@ from datetime import datetime, date
 def GetDate():
                 check_y =True
                 while check_y:
-                            deadline_y = int(input(TColor.GREEN+f'Deadline Years: '))
-                            if (deadline_y < 5) and (deadline_y) >= 0:
+                            deadline_y = (input(TColor.GREEN+f'Deadline Years: '))
+                            if deadline_y.isdigit() and int(deadline_y < 5) and int(deadline_y) >= 0:
                                         check_y = False
                                         break
-                            print(TColor.RED+f'{deadline_y} years is too far, should be less than 5 years and greater than or equal to 0')
+                            elif(deadline_y == ''):
+                                deadline_y = 0
+                                break
+                            else:
+                                print(TColor.RED+f'{deadline_y} years is too far, should be less than 5 years and greater than or equal to 0')
                 
                 check_m =True
                 while check_m:
-                            deadline_m = int(input(TColor.GREEN+f'Deadline Months: '))
-                            if ((deadline_m) < 12) and ((deadline_m) >= 0):
+                            deadline_m = (input(TColor.GREEN+f'Deadline Months: '))
+                            if deadline_m.isdigit() and (int(deadline_m) < 12) and (int(deadline_m) >= 0):
                                         check_m = False
                                         break
-                            print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
+                            elif(deadline_m == ''):
+                                deadline_m = 0
+                                break
+                            else:
+                                print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
                 
                 check_w =True
                 while check_w:
-                            deadline_w = int(input(TColor.GREEN+f'Deadline Weeks: '))
-                            if ((deadline_w) <= 4) and ((deadline_w) >= 0):
+                            deadline_w = (input(TColor.GREEN+f'Deadline Weeks: '))
+                            if deadline_w.isdigit() and (int(deadline_w) <= 4) and (int(deadline_w) >= 0):
                                         deadline_w = deadline_w * 7
                                         check_w = False
                                         break
-                            print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
+                            elif(deadline_w == ''):
+                                deadline_w = 0
+                                break
+                            else:
+                                print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
                             
                 check_d =True
                 while check_d:
-                            deadline_d = int(input(TColor.GREEN+f'Deadline Days: '))
-                            if ((deadline_d) < 7) and ((deadline_d) >= 0):
+                            deadline_d = (input(TColor.GREEN+f'Deadline Days: '))
+                            if deadline_d.isdigit() and (int(deadline_d) < 7) and (int(deadline_d) >= 0):
                                 tmp = deadline_w + deadline_d
                                 if(tmp <= 30):
                                         tmp += datetime.now().day
@@ -49,7 +61,11 @@ def GetDate():
                                             break
                                 else:
                                     print(TColor.RED+'Sum of days and weeks is greater than 30')
-                            print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
+                            elif(deadline_d == ''):
+                                deadline_d = datetime.now().day
+                                break
+                            else:
+                                print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
                 Deadline = {
                         "y":datetime.now().year + deadline_y,
                         "m":datetime.now().month + deadline_m,
