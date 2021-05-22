@@ -361,9 +361,9 @@ def Progress():
                 bar(done_count, len(fli['to'][i]))
             if(len(fli['to'][i]) == 0):
                 print(TColor.RED + i + '. ' + 'there is no task under this to')
-            if(all_task_count != 0):
-                print(TColor.YELLOW + 'All:', end=' ')
-                bar(all_done_count, all_task_count)
+        if(all_task_count != 0):
+            print(TColor.YELLOW + 'At All:', end=' ')
+            bar(all_done_count, all_task_count)
 
 def UnDoneTask():
     try:
