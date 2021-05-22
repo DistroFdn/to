@@ -169,21 +169,21 @@ def PrintTask():
                     todo_count += 1
                     if(j['priority'] == 1):
                         print('\n'+TColor.GREEN+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        if(TimeLeft(j).days > 0):
+                        if(TimeLeft(j).days >= 0):
                             print('\t'+'|'+str(TimeLeft(j).days)+' days left')
-                        else:
+                        elif(TimeLeft(j).days < 0):
                             print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                     elif(j['priority'] == 2):
                         print('\n'+TColor.YELLOW+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        if(TimeLeft(j).days > 0):
+                        if(TimeLeft(j).days >= 0):
                             print('\t'+'|'+str(TimeLeft(j).days)+' days left')
-                        else:
+                        elif(TimeLeft(j).days < 0):
                             print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                     elif(j['priority'] == 3):
                         print('\n'+TColor.RED+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        if(TimeLeft(j).days > 0):
+                        if(TimeLeft(j).days >= 0):
                             print('\t'+'|'+str(TimeLeft(j).days)+' days left')
-                        else:
+                        elif(TimeLeft(j).days < 0):
                             print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                 elif(j['done'] == 'True'):
                     to_count_done += 1
