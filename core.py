@@ -5,7 +5,7 @@ import os
 import sys
 from json import load
 import os
-from datetime import datetime, date
+from datetime import datetime, date, time
 
 def GetDate():
                 check_y =True
@@ -165,13 +165,22 @@ def PrintTask():
                     todo_count += 1
                     if(j['priority'] == 1):
                         print('\n'+TColor.GREEN+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        if(TimeLeft(j).days > 0):
+                            print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        else:
+                            print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                     elif(j['priority'] == 2):
                         print('\n'+TColor.YELLOW+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        if(TimeLeft(j).days > 0):
+                            print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        else:
+                            print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                     elif(j['priority'] == 3):
                         print('\n'+TColor.RED+"\t"+'|'+'['+str(todo_count)+"]. "+j['task'])
-                        print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        if(TimeLeft(j).days > 0):
+                            print('\t'+'|'+str(TimeLeft(j).days)+' days left')
+                        else:
+                            print('\t'+'|'+'expiered '+str(TimeLeft(j).days) + ' days ago')
                 elif(j['done'] == 'True'):
                     to_count_done += 1
             if(to_count_done == to_count_list):
