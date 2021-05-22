@@ -11,7 +11,7 @@ def GetDate():
                 check_y =True
                 while check_y:
                             deadline_y = (input(TColor.GREEN+f'Deadline Years: '))
-                            if deadline_y.isdigit() and int(deadline_y < 5) and int(deadline_y) >= 0:
+                            if deadline_y.isdigit() and int(deadline_y) < 5 and int(deadline_y) >= 0:
                                         check_y = False
                                         break
                             elif(deadline_y == ''):
@@ -49,11 +49,15 @@ def GetDate():
                 while check_d:
                             deadline_d = (input(TColor.GREEN+f'Deadline Days: '))
                             if deadline_d.isdigit() and (int(deadline_d) < 7) and (int(deadline_d) >= 0):
+                                deadline_m = int(deadline_m)
+                                deadline_w = int(deadline_w)
+                                deadline_y = int(deadline_y)
+                                deadline_d = int(deadline_d)
                                 tmp = deadline_w + deadline_d
                                 if(tmp <= 30):
                                         tmp += datetime.now().day
                                         if(tmp <= 30):
-                                            deadline_d = (deadline_w +deadline_d + datetime.now().day)
+                                            deadline_d = (deadline_w + deadline_d + datetime.now().day)
                                             break
                                         else:
                                             deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
