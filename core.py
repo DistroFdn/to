@@ -41,11 +41,11 @@ def GetDate():
                                 if(tmp <= 30):
                                         tmp += datetime.now().day
                                         if(tmp <= 30):
-                                            deadline_d = (deadline_d + datetime.now().day)
+                                            deadline_d = (deadline_w +deadline_d + datetime.now().day)
                                             break
                                         else:
                                             deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
-                                            deadline_d = (deadline_d + deadline_w + datetime.now().day) % 30
+                                            deadline_d = int((deadline_d + deadline_w + datetime.now().day) % 30)
                                             break
                                 else:
                                     print(TColor.RED+'Sum of days and weeks is greater than 30')
