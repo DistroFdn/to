@@ -94,7 +94,7 @@
                 }
             },
             {
-                "done": "False",
+                "done": "True",
                 "task": "a ctrl+c to cancel any thing.",
                 "priority": 2,
                 "deadline": {
