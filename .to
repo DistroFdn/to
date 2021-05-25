@@ -77,6 +77,21 @@
                     "m": 5,
                     "d": 25
                 }
+            },
+            {
+                "done": "False",
+                "task": "completo dont write who-done-what",
+                "priority": 3,
+                "deadline": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 25
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 25
+                }
             }
         ]
     }
