@@ -1,7 +1,15 @@
 #!/bin/python3
 
 import core
-import sys
+import initer
+
+
+
+if(not initer.IsInited()):
+    print(core.TColor.YELLOW + 'you shoud first config your user name and email')
+    username = input(core.TColor.CYAN + 'usesr name: ')
+    email = input(core.TColor.CYAN + 'email: ')
+    initer.UserConf(username, email)
 
 command = str()
 

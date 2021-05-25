@@ -11,3 +11,7 @@ def UserConf(username, email):
         conf_fli = {'username':username,'email':email}
         conf_fli = json.dumps(conf_fli, indent=4)
         fli.write(conf_fli)
+
+def IsInited():
+    conf_path = str(Whoami()) + '/.local/share/to.conf'
+    return os.path.exists(conf_path)
