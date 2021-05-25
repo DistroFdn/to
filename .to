@@ -3,82 +3,52 @@
         "add": [
             {
                 "done": "False",
-                "task": "a pretty graphical log",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                }
-            },
-            {
-                "done": "False",
                 "task": "for git, a pretty commit massage filler",
+                "priority": 2
+            },
+            {
+                "done": "False",
+                "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 },
                 "begintime": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 }
             },
             {
                 "done": "False",
-                "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9.",
+                "task": " function that add a table to readme.md file. this func is usefull for github. because it will show what shoud be done. with this no one will need to install this program to read .to file.",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 },
                 "begintime": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
-                }
-            },
-            {
-                "done": "True",
-                "task": "a file in ~/.local/share/to/to.conf this file will tell us who done what. in .to file we will have a key and value which show who done what.",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "by": {
-                    "username": "shabane",
-                    "email": "m.mohamadshabane@gmail.com",
-                    "donedby": "True"
+                    "d": 25
                 }
             },
             {
                 "done": "False",
-                "task": "a function that add a table to readme.md file. this func is usefull for github. because it will show what shoud be done. with this no one will need to install this program to read .to file.",
+                "task": "argspars for get args in terminal not intractive mode",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 },
                 "begintime": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 }
             }
         ],
@@ -90,96 +60,32 @@
                 "deadline": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 },
                 "begintime": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
-                }
-            },
-            {
-                "done": "True",
-                "task": "a ctrl+c to cancel any thing.",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
+                    "d": 25
                 }
             },
             {
                 "done": "False",
-                "task": "argspars for get args in terminal not intractive mod",
-                "priority": 2,
+                "task": "in edit task we shoud use getdate() to edit the date",
+                "priority": 3,
                 "deadline": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
+                    "d": 25
                 },
                 "begintime": {
                     "y": 2021,
                     "m": 5,
-                    "d": 22
-                }
-            }
-        ],
-        "for log": [
-            {
-                "done": "False",
-                "task": "a deadline and donetime and begin time",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
+                    "d": 25
                 }
             },
             {
                 "done": "False",
-                "task": "progress",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                }
-            },
-            {
-                "done": "False",
-                "task": "who done what",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 22
-                }
-            }
-        ],
-        "test": [
-            {
-                "done": "True",
-                "task": "to test the done",
+                "task": "by enter the priority shoud be defualt, normal",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
@@ -190,31 +96,6 @@
                     "y": 2021,
                     "m": 5,
                     "d": 25
-                },
-                "by": {
-                    "username": "shabane",
-                    "email": "m.mohamadshabane@gmail.com",
-                    "donedby": "False"
-                }
-            },
-            {
-                "done": "True",
-                "task": "to test undone",
-                "priority": 2,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 25
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 25
-                },
-                "by": {
-                    "username": "shabane",
-                    "email": "m.mohamadshabane@gmail.com",
-                    "donedby": "True"
                 }
             }
         ]

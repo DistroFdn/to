@@ -91,14 +91,15 @@ def TimeLeft(task):
     return deadline - nowline
 
 def SetDate():
-    start_time = {
+    time = {
     'y' : datetime.now().year,
     'm' : datetime.now().month,
     'd' : datetime.now().day
     }
-    return start_time
+    return time
 
 def CheckFile(init):
+        # this function will check .to file exist or not. if it wasn't it will exist and init == false the program with exit code 2 if init == true program will make the file
         if(not os.path.isfile('.to')):
             if(init == True):
                 struct = {'to':{}}
@@ -238,7 +239,7 @@ def DoneTask():
                             fli['to'][tag][task_num-1]['by'] = {
                                 'username':Uconf()[0],
                                 'email':Uconf()[1],
-                                'donedby':'True'
+                                'doneat': SetDate()
                                 }
                             with open('.to', 'w') as fliw:
                                 fliw.write(json.dumps(fli,indent=4))
@@ -355,6 +356,7 @@ def Edit():
         print(TColor.RED+str(e))
 
 def Progress():
+    # every time that you call this function. it will print a progress of all thing.
     CheckFile(False)
     with open('.to', 'r') as fli:
         all_done_count = 0
@@ -400,11 +402,6 @@ def UnDoneTask():
                         task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
                         if(task_num != 0):
                             fli['to'][tag][task_num-1]['done'] = 'False'
-                            fli['to'][tag][task_num-1]['by'] = {
-                                'username':Uconf()[0],
-                                'email':Uconf()[1],
-                                'donedby':'False'
-                                }
                             with open('.to', 'w') as fliw:
                                 fliw.write(json.dumps(fli,indent=4))
                                 print(TColor.BLUE+'undoned')
@@ -414,3 +411,25 @@ def UnDoneTask():
                     print(TColor.RED+'there is no task in this to')
     except Exception as e:
         print(TColor.RED+str(e))
+        
+def log():
+    CheckFile(init=False)
+    try:
+        with open(".to", 'r') as fli:
+            fli = load(fli)
+            tag = fli['to'].keys()
+            for i in tag:
+                max_task = len(fli['to'][i])
+                for j in (fli['to'][i]):
+                    if(j['done'] == 'True'):
+                        tmp_begin_date = str(j['begintime']['y']) + "-" + str(j['begintime']['m']) + "-" + str(j['begintime']['d']) 
+                        tmp_end_date = str(j['by']['doneat']['y']) + "-" + str(j['by']['doneat']['m']) + "-" + str(j['by']['doneat']['d']) 
+                        print(TColor.YELLOW + '\n' + '* {username} <{email}>'.format(username=j['by']['username'], email=j['by']['email']))
+                        print(TColor.CYAN + '|' + '\t' + j['task'])
+                        print(TColor.GREEN + '|' + '\t' + "added at: " + tmp_begin_date, end=(''))
+                        print('\n|\t' +"done at: " + tmp_end_date)
+    except Exception as e:
+        print('error: '+str(e))
+        
+                    
+                    
