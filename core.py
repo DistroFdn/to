@@ -400,6 +400,11 @@ def UnDoneTask():
                         task_num = int(input(TColor.NORMAL+'which task[0 to quit]: '))
                         if(task_num != 0):
                             fli['to'][tag][task_num-1]['done'] = 'False'
+                            fli['to'][tag][task_num-1]['by'] = {
+                                'username':Uconf()[0],
+                                'email':Uconf()[1],
+                                'donedby':'False'
+                                }
                             with open('.to', 'w') as fliw:
                                 fliw.write(json.dumps(fli,indent=4))
                                 print(TColor.BLUE+'undoned')
