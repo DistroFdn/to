@@ -411,6 +411,7 @@ def UnDoneTask():
                     print(TColor.RED+'there is no task in this to')
     except Exception as e:
         print(TColor.RED+str(e))
+<<<<<<< HEAD
         
 def log():
     CheckFile(init=False)
@@ -433,3 +434,6 @@ def log():
         
                     
                     
+=======
+
+>>>>>>> master
