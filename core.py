@@ -4,9 +4,16 @@ import json
 import os
 import sys
 from json import load
-import os
-from datetime import datetime, date, time
+from datetime import datetime, date
+import initer
 
+def Uconf():
+    conf_path = str(initer.Whoami()) + '/.local/share/to.conf'
+    with open(conf_path, 'r') as fli:
+        fli = json.load(fli)
+        return (str(fli['username']), fli['email'])
+        
+    
 def GetDate():
                 check_y =True
                 while check_y:
