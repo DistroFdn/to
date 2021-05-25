@@ -411,7 +411,6 @@ def UnDoneTask():
                     print(TColor.RED+'there is no task in this to')
     except Exception as e:
         print(TColor.RED+str(e))
-<<<<<<< HEAD
         
 def log():
     CheckFile(init=False)
@@ -420,7 +419,6 @@ def log():
             fli = load(fli)
             tag = fli['to'].keys()
             for i in tag:
-                max_task = len(fli['to'][i])
                 for j in (fli['to'][i]):
                     if(j['done'] == 'True'):
                         tmp_begin_date = str(j['begintime']['y']) + "-" + str(j['begintime']['m']) + "-" + str(j['begintime']['d']) 
@@ -433,7 +431,4 @@ def log():
         print('error: '+str(e))
         
                     
-                    
-=======
 
->>>>>>> master
