@@ -47,7 +47,7 @@
                 }
             },
             {
-                "done": "False",
+                "done": "True",
                 "task": "a file in ~/.local/share/to/to.conf this file will tell us who done what. in .to file we will have a key and value which show who done what.",
                 "priority": 2,
                 "deadline": {
@@ -59,6 +59,11 @@
                     "y": 2021,
                     "m": 5,
                     "d": 22
+                },
+                "by": {
+                    "username": "shabane",
+                    "email": "m.mohamadshabane@gmail.com",
+                    "donedby": "True"
                 }
             },
             {
@@ -171,6 +176,27 @@
                 }
             }
         ],
-        "test": []
+        "test": [
+            {
+                "done": "True",
+                "task": "to test the done",
+                "priority": 2,
+                "deadline": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 25
+                },
+                "begintime": {
+                    "y": 2021,
+                    "m": 5,
+                    "d": 25
+                },
+                "by": {
+                    "username": "shabane",
+                    "email": "m.mohamadshabane@gmail.com",
+                    "donedby": "False"
+                }
+            }
+        ]
     }
 }
