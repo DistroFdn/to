@@ -4,11 +4,6 @@
             {
                 "done": "False",
                 "task": "for git, a pretty commit massage filler",
-                "priority": 2
-            },
-            {
-                "done": "False",
-                "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
@@ -23,7 +18,7 @@
             },
             {
                 "done": "False",
-                "task": " function that add a table to readme.md file. this func is usefull for github. because it will show what shoud be done. with this no one will need to install this program to read .to file.",
+                "task": "done a range of task. we can get number's seprated by wite space like: 1 2 4 7 9.",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
@@ -38,7 +33,7 @@
             },
             {
                 "done": "False",
-                "task": "argspars for get args in terminal not intractive mode",
+                "task": "a function that add a table to readme.md file. this table is todo table. and will show what we should to.",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
@@ -55,7 +50,7 @@
         "fix": [
             {
                 "done": "False",
-                "task": "whene we get data in any where, we cant use arrow key to edit. fix it.",
+                "task": "user cant use arrow key in input",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
@@ -70,22 +65,7 @@
             },
             {
                 "done": "False",
-                "task": "in edit task we shoud use getdate() to edit the date",
-                "priority": 3,
-                "deadline": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 25
-                },
-                "begintime": {
-                    "y": 2021,
-                    "m": 5,
-                    "d": 25
-                }
-            },
-            {
-                "done": "False",
-                "task": "by enter the priority shoud be defualt, normal",
+                "task": "let user to edit the task date",
                 "priority": 2,
                 "deadline": {
                     "y": 2021,
