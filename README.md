@@ -20,3 +20,10 @@ git clone https://github.com/DistroTEAM/to && cd to
 ---
 
 we wish you enjoy of it.
+
+# Features
+
+- [X] (add log)
+- [ ] (GUI app)
+- [X] (Basically)
+- [ ] (add to telegram bot)
