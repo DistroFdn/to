@@ -349,6 +349,7 @@ def Edit():
                         newdone = fli['to'][tag][task_num-1]['done']
                         newtask = {'done' : newdone,'task' : newtask, 'priority' : newpriority}
                         fli['to'][tag][task_num-1] = newtask
+                        fli['to'][tag][task_num-1]['deadline'] = GetDate()
                         with open('.to', 'w') as fliw:
                             fliw.write(json.dumps(fli, indent=4))
                             print('done')
