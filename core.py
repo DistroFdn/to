@@ -13,7 +13,7 @@ import initer
 '''
 
 def Uconf():
-    conf_path = str(initer.Whoami()) + '/.local/share/to.conf'
+    conf_path = str(initer.Whoami()) + '\.local\share\to.conf'
     with open(conf_path, 'r') as fli:
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
@@ -110,7 +110,11 @@ def SetDate():
     return time
 
 def CheckFile(init):
-        # this function will check .to file exist or not. if it wasn't it will exist and init == false the program with exit code 2 if init == true program will make the file
+        '''
+        this function will check .to file exist or not.
+        if it wasn't it will exist and init == false the program with exit
+        code 2 if init == true program will make the file.
+        '''
         if(not os.path.isfile('.to')):
             if(init == True):
                 struct = {'to':{}}
