@@ -7,80 +7,92 @@ from json import load
 from datetime import datetime, date
 import initer
 
+'''
+
+
+'''
+
 def Uconf():
     conf_path = str(initer.Whoami()) + '/.local/share/to.conf'
     with open(conf_path, 'r') as fli:
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
-         
+
 def GetDate():
-                check_y =True
-                while check_y:
-                            deadline_y = (input(TColor.GREEN+f'Deadline Years: '))
-                            if deadline_y.isdigit() and int(deadline_y) < 5 and int(deadline_y) >= 0:
-                                        deadline_y = int(deadline_y)
-                                        break
-                            elif(deadline_y == ''):
-                                deadline_y = 0
-                                break
-                            else:
-                                print(TColor.RED+f'{deadline_y} years is too far, should be less than 5 years and greater than or equal to 0')
-                
-                check_m =True
-                while check_m:
-                            deadline_m = (input(TColor.GREEN+f'Deadline Months: '))
-                            if deadline_m.isdigit() and (int(deadline_m) < 12) and (int(deadline_m) >= 0):
-                                        deadline_m = int(deadline_m)
-                                        break
-                            elif(deadline_m == ''):
-                                deadline_m = 0
-                                break
-                            else:
-                                print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
-                
-                check_w =True
-                while check_w:
-                            deadline_w = (input(TColor.GREEN+f'Deadline Weeks: '))
-                            if deadline_w.isdigit() and (int(deadline_w) <= 4) and (int(deadline_w) >= 0):
-                                        deadline_w = int(deadline_w) * 7
-                                        break
-                            elif(deadline_w == ''):
-                                deadline_w = 0
-                                break
-                            else:
-                                print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
-                            
-                check_d =True
-                while check_d:
-                            deadline_d = (input(TColor.GREEN+f'Deadline Days: '))
-                            if deadline_d.isdigit() and (int(deadline_d) < 7) and (int(deadline_d) >= 0):
-                                deadline_m = int(deadline_m)
-                                deadline_w = int(deadline_w)
-                                deadline_y = int(deadline_y)
-                                deadline_d = int(deadline_d)
-                                tmp = deadline_w + deadline_d
-                                if(tmp <= 30):
-                                        tmp += datetime.now().day
-                                        if(tmp <= 30):
-                                            deadline_d = (deadline_w + deadline_d + datetime.now().day)
-                                            break
-                                        else:
-                                            deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
-                                            deadline_d = int((deadline_d + deadline_w + datetime.now().day) % 30)
-                                            break
-                                else:
-                                    print(TColor.RED+'Sum of days and weeks is greater than 30')
-                            elif(deadline_d == ''):
-                                deadline_d = datetime.now().day
-                                break
-                            else:
-                                print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
-                Deadline = {
-                        "y":datetime.now().year + deadline_y,
-                        "m":datetime.now().month + deadline_m,
-                        "d":deadline_d
-                    }
-                return Deadline    
+    check_y =True
+    while check_y:
+        deadline_y = (input(TColor.GREEN+f'Deadline Years: '))
+        if deadline_y.isdigit() and int(deadline_y) < 5 and int(deadline_y) >= 0:
+            deadline_y = int(deadline_y)
+            break
+        elif(deadline_y == ''):
+            deadline_y = 0
+            break
+        else:
+            print(TColor.RED+f'{deadline_y} years is too far,'
+                            'should be less than 5 years and greater'
+                            'than or equal to 0')
+
+    check_m =True
+    while check_m:
+        deadline_m = (input(TColor.GREEN+f'Deadline Months: '))
+        if deadline_m.isdigit() and (int(deadline_m) < 12) and (int(deadline_m) >= 0):
+            deadline_m = int(deadline_m)
+            break
+        elif(deadline_m == ''):
+            deadline_m = 0
+            break
+        else:
+            print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
+
+    check_w =True
+    while check_w:
+        deadline_w = (input(TColor.GREEN+f'Deadline Weeks: '))
+        if deadline_w.isdigit() and (int(deadline_w) <= 4) and (int(deadline_w) >= 0):
+            deadline_w = int(deadline_w) * 7
+            break
+        elif(deadline_w == ''):
+            deadline_w = 0
+            break
+        else:
+            print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
+            deadline_m = int(deadline_m)
+
+    check_d =True
+    while check_d:
+        deadline_d = (input(TColor.GREEN+f'Deadline Days: '))
+        if deadline_d.isdigit() and (int(deadline_d) < 7) and (int(deadline_d) >= 0):
+            deadline_m = int(deadline_m)
+            deadline_w = int(deadline_w)
+            deadline_y = int(deadline_y)
+            deadline_d = int(deadline_d)
+            tmp = deadline_w + deadline_d
+
+            if(tmp <= 30):
+                tmp += datetime.now().day
+                if(tmp <= 30):
+                    deadline_d = (deadline_w + deadline_d + datetime.now().day)
+                    break
+                else:
+                    deadline_m += int((deadline_d + deadline_w + datetime.now().day) / 30)
+                    deadline_d = int((deadline_d + deadline_w + datetime.now().day) % 30)
+                    break
+            else:
+                print(TColor.RED+'Sum of days and weeks is greater than 30')
+        elif(deadline_d == ''):
+            deadline_d = datetime.now().day
+            break
+        else:
+            print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
+    Deadline = {
+            "y":datetime.now().year + deadline_y,
+            "m":datetime.now().month + deadline_m,
+            "d":deadline_d
+        }
+
+    return Deadline
+
+
 
 def TimeLeft(task):
     NOW = datetime.now()
@@ -131,7 +143,7 @@ class TColor:
 def Menu():
     print("""
     help:
-        
+
         add:
             a   add a new to
             i   insert a task under a to
@@ -146,7 +158,7 @@ def Menu():
             p   print all todo's
             s  show task's wich you done
             clear clear the screen
-        
+
         progress:
             prog    show a percentage and a progress of what you done
             log     show a log of what you done.
@@ -287,7 +299,7 @@ def InsertTask():
                 task = input(TColor.GREEN+'task: ')
                 for i in range(3):
                     print(TColor.BLUE+str(i+1) + ". " +pri[i])
-                priority = input(TColor.GREEN+'priority: ')          
+                priority = input(TColor.GREEN+'priority: ')
                 newtask = {
                     "done":"False","task":task,"priority":int(priority),
                     "deadline":GetDate(),
@@ -411,7 +423,7 @@ def UnDoneTask():
                     print(TColor.RED+'there is no task in this to')
     except Exception as e:
         print(TColor.RED+str(e))
-        
+
 def log():
     CheckFile(init=False)
     try:
@@ -421,14 +433,11 @@ def log():
             for i in tag:
                 for j in (fli['to'][i]):
                     if(j['done'] == 'True'):
-                        tmp_begin_date = str(j['begintime']['y']) + "-" + str(j['begintime']['m']) + "-" + str(j['begintime']['d']) 
-                        tmp_end_date = str(j['by']['doneat']['y']) + "-" + str(j['by']['doneat']['m']) + "-" + str(j['by']['doneat']['d']) 
+                        tmp_begin_date = str(j['begintime']['y']) + "-" + str(j['begintime']['m']) + "-" + str(j['begintime']['d'])
+                        tmp_end_date = str(j['by']['doneat']['y']) + "-" + str(j['by']['doneat']['m']) + "-" + str(j['by']['doneat']['d'])
                         print(TColor.YELLOW + '\n' + '* {username} <{email}>'.format(username=j['by']['username'], email=j['by']['email']))
                         print(TColor.CYAN + '|' + '\t' + j['task'])
                         print(TColor.GREEN + '|' + '\t' + "added at: " + tmp_begin_date, end=(''))
                         print('\n|\t' +"done at: " + tmp_end_date)
     except Exception as e:
         print('error: '+str(e))
-        
-                    
-
