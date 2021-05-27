@@ -21,19 +21,22 @@ and then save the email and username in this
 file in the form of Json
 '''
 def UserConf(username, email):
+    # Get the type of operating system and choose to create a directory
     conf_path = None
     if os.name == "nt":
-        conf_path = str(Whoami()) + '\.local\share\to.conf'
+        conf_path = str(Whoami()) + '\\to.conf'
     else:
-        conf_path = str(Whoami()) + '/.local/share/to.conf'
+        conf_path = str(Whoami()) + '.local/share/to.conf'
     with open(conf_path, 'w') as fli:
         conf_fli = {'username':username,'email':email}
         conf_fli = json.dumps(conf_fli, indent=4)
         fli.write(conf_fli)
 
-# In this function, the final file is created in the path.
+# Checking the file in the path
 def IsInited():
-    conf_path = str(Whoami()) + '\.local\share\to.confl'
+    conf_path = None
+    if os.name == "nt":
+        conf_path = str(Whoami()) + '\\to.conf'
+    else:
+        conf_path = str(Whoami()) + '.local/share/to.conf'
     return os.path.exists(conf_path)
-
-print(str(Whoami()))
