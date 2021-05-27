@@ -26,7 +26,7 @@ def UserConf(username, email):
     if os.name == "nt":
         conf_path = str(Whoami()) + '\\to.conf'
     else:
-        conf_path = str(Whoami()) + '.local/share/to.conf'
+        conf_path = str(Whoami()) + '/.local/share/to.conf'
     with open(conf_path, 'w') as fli:
         conf_fli = {'username':username,'email':email}
         conf_fli = json.dumps(conf_fli, indent=4)
