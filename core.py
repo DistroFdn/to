@@ -196,8 +196,7 @@ def Clear():
         os.system('clear')
     elif(sys.platform == 'win32' or sys.platform == 'win64'):
         os.system('cls')
-
-print("\033[31mThis is red\033[0m")
+        
 def PrintTask():
     CheckFile(False)
     with open('.to', 'r') as fli:
