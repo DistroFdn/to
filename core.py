@@ -8,10 +8,13 @@ from datetime import datetime, date
 import initer
 
 '''
-
-
+This is the main file and the center of important tasks of the program.
+In this file, the definition of various methods for
+running the program is set.
 '''
 
+#In this method, it displays the config data in the created file
+#Such as E-mail and username
 def Uconf():
     conf_path = None
     if os.name == "nt":
@@ -22,7 +25,9 @@ def Uconf():
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
 
+# This method displays tasks related to time and deadlines
 def GetDate():
+    ''' This part is responsible for receiving the target year '''
     check_years =True
     while check_years:
         deadline_years = (input(TColor.GREEN+f'Deadline Years: '))
@@ -37,6 +42,7 @@ def GetDate():
                             'should be less than 5 years and greater'
                             'than or equal to 0')
 
+    ''' This section is responsible for receiving the target month '''
     check_m =True
     while check_m:
         deadline_m = (input(TColor.GREEN+f'Deadline Months: '))
@@ -49,6 +55,7 @@ def GetDate():
         else:
             print(TColor.RED+f'Months should be less than 12 and greater than or equal to 0')
 
+    ''' This section is the task of receiving the target week '''
     check_w =True
     while check_w:
         deadline_w = (input(TColor.GREEN+f'Deadline Weeks: '))
@@ -62,6 +69,12 @@ def GetDate():
             print(TColor.RED+f'Weeks should be less than 5 and greater than or equal to 0')
             deadline_m = int(deadline_m)
 
+
+    '''
+    This section is the task of receiving the target day
+    and the conversion and time intervals of day,
+    week, year and month
+    '''
     check_d =True
     while check_d:
         deadline_d = (input(TColor.GREEN+f'Deadline Days: '))
@@ -87,7 +100,10 @@ def GetDate():
             deadline_d = datetime.now().day
             break
         else:
-            print(TColor.RED+f'Days should be less than 7 and greater than or equal to 1')
+            print(TColor.RED+f'Days should be less than 7 and '
+                            'greater than or equal to 1')
+
+    # Calculate target deadlines
     Deadline = {
             "y":datetime.now().year + deadline_y,
             "m":datetime.now().month + deadline_m,
@@ -96,8 +112,7 @@ def GetDate():
 
     return Deadline
 
-
-
+# Send the remaining days to the deadline
 def TimeLeft(task):
     NOW = datetime.now()
     nowline = date(NOW.year, NOW.month, NOW.day)
@@ -179,7 +194,10 @@ def Menu():
 def Clear():
     if(sys.platform == 'linux'):
         os.system('clear')
+    elif(sys.platform == 'win32' or sys.platform == 'win64'):
+        os.system('cls')
 
+print("\033[31mThis is red\033[0m")
 def PrintTask():
     CheckFile(False)
     with open('.to', 'r') as fli:
