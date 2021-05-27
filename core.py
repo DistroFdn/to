@@ -28,17 +28,17 @@ def Uconf():
 # This method displays tasks related to time and deadlines
 def GetDate():
     ''' This part is responsible for receiving the target year '''
-    check_years =True
-    while check_years:
-        deadline_years = (input(TColor.GREEN+f'Deadline Years: '))
-        if deadline_years.isdigit() and int(deadline_y) < 5 and int(deadline_y) >= 0:
-            deadline_years = int(deadline_y)
+    check_y =True
+    while check_y:
+        deadline_y = (input(TColor.GREEN+f'Deadline Years: '))
+        if deadline_y.isdigit() and int(deadline_y) < 5 and int(deadline_y) >= 0:
+            deadline_y = int(deadline_y)
             break
-        elif(deadline_years == ''):
-            deadline_years = 0
+        elif(deadline_y == ''):
+            deadline_y = 0
             break
         else:
-            print(TColor.RED+f'{deadline_years} years is too far,'
+            print(TColor.RED+f'{deadline_y} years is too far,'
                             'should be less than 5 years and greater'
                             'than or equal to 0')
 
