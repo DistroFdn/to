@@ -27,3 +27,5 @@ we wish you enjoy of it.
 - [ ] GUI app
 - [X] Basically
 - [ ] add to telegram bot
+- [ ] Windows version
+- [ ] Web version
