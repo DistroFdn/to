@@ -38,5 +38,5 @@ def IsInited():
     if os.name == "nt":
         conf_path = str(Whoami()) + '\\to.conf'
     else:
-        conf_path = str(Whoami()) + '.local/share/to.conf'
+        conf_path = str(Whoami()) + '/.local/share/to.conf'
     return os.path.exists(conf_path)
