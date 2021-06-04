@@ -20,7 +20,7 @@ def Uconf():
     if os.name == "nt":
         conf_path = str(initer.Whoami()) + '\\to.conf'
     else:
-        conf_path = str(initer.Whoami()) + '.local/share/to.conf'
+        conf_path = str(initer.Whoami()) + '/.local/share/to.conf'
     with open(conf_path, 'r') as fli:
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
