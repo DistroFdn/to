@@ -1,5 +1,8 @@
 # to(beta)
 
+![s](https://img.shields.io/github/languages/code-size/distroteam/to)
+![d](https://img.shields.io/github/license/distroteam/to)
+
 ## a todo program.
 
 ### this program is under building
