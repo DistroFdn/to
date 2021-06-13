@@ -32,4 +32,5 @@ we wish you enjoy of it.
 - [ ] add to telegram bot
 - [ ] Windows version
 - [ ] Web version
+- [ ] Add to official Repository
 - [ ] add Table
