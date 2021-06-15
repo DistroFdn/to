@@ -4,6 +4,22 @@ import core
 import initer
 import argparse
 
+# this is the non-intractive command-line interface
+# help text
+description = 'list all the todo in seprated list'
+# store section
+cli = argparse.ArgumentParser(description=description)
+cli.add_argument('add', action='store_ture', type=bool)
+cli.add_argument('insert', action='store_true', type=bool)
+cli.add_argument('edit', action='store_true', type=bool)
+cli.add_argument('fill', action='store_true', type=bool)
+cli.add_argument('done', action='store_true', type=bool)
+cli.add_argument('undone', action='store_true', type=bool)
+cli.add_argument('list', action='store_true', type=bool)
+cli.add_argument('show', action='store_true', type=bool)
+cli.add_argument('prog', action='store_true', type=bool)
+cli.add_argument('log', action='store_true', type=bool)
+
 # this method run every time that the program run, this method will check that
 # you have configed your username and emial or not. if yes you can continue to use
 #if no, method will do this for you.
