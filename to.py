@@ -56,6 +56,8 @@ if(len(sys.argv) > 1):
     cli = sys.argv[1]
     if(cli == 'add'):
         core.AddTo()
+    elif(cli == 'help' or cli == 'menu' or cli == '--help'):
+        core.Menu()
     elif(cli == 'insert'):
         core.InsertTask()
     elif(cli == 'edit'):
