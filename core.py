@@ -475,8 +475,10 @@ def log():
 # this function will get a function and will save what that function return in tag named 'latest' in .to file.
 def Done(f):
     with open('.to', 'r') as fli:
-        fli = fli.read()
-        fli['latest'] = f()
-        with open('.to', 'w') as fliw:
-            fli = json.dumps(fli, indent=4)
-            fliw.write(fli)
+        fli = json.load(fli)
+        __tmp__ = f()
+        if(__tmp__ != False):
+            fli['latest'] = __tmp__
+            with open('.to', 'w') as fliw:
+                fli = json.dumps(fli, indent=4)
+                fliw.write(fli)

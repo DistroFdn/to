@@ -63,9 +63,9 @@ if(len(sys.argv) > 1):
     elif(cli == 'edit'):
         core.Edit()
     elif(cli == 'fill' or cli == 'complete'):
-        core.CompletTo()
+        core.Done(core.CompletTo)
     elif(cli == 'done'):
-        core.DoneTask()
+        core.Done(core.DoneTask)
     elif(cli == 'undone'):
         core.UnDoneTask()
     elif(cli == 'print' or cli == 'list'):
@@ -76,6 +76,8 @@ if(len(sys.argv) > 1):
         core.Progress()
     elif(cli == 'log'):
         core.log()
+    elif(cli == 'commit'):
+        pass
     else:
         print(core.TColor.RED+'option is invalid')
 elif(len(sys.argv) == 1):
