@@ -282,6 +282,7 @@ def DoneTask():
                                 fliw.write(json.dumps(fli,indent=4))
                                 print(TColor.BLUE+'done')
                                 __tmp__ = 'done:\n' + '\t' + tag + ': ' + fli['to'][tag][task_num-1]['task']
+                                return __tmp__
                     else:
                         print(TColor.BLUE+"you did all the task's")
                         __tmp__ = 'all task in this to in done before'
@@ -290,7 +291,6 @@ def DoneTask():
                     __tmp__ = 'there is no task in this to'
     except Exception as e:
         print(TColor.RED+str(e))
-    return __tmp__
 
 def CompletTo():
     __tmp__ = []
@@ -480,10 +480,10 @@ def log():
 
 # this function will get a function and will save what that function return in tag named 'latest' in .to file.
 def Done(f):
-    with open('.to', 'r') as fli:
-        fli = json.load(fli)
-        __tmp__ = f()
-        if(__tmp__ != False):
+    __tmp__ = f()
+    if(__tmp__ != False):
+        with open('.to', 'r') as fli:
+            fli = json.load(fli)
             fli['latest'] = __tmp__
             with open('.to', 'w') as fliw:
                 fli = json.dumps(fli, indent=4)
