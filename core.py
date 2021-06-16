@@ -196,7 +196,7 @@ def Clear():
         os.system('clear')
     elif(sys.platform == 'win32' or sys.platform == 'win64'):
         os.system('cls')
-        
+
 def PrintTask():
     CheckFile(False)
     with open('.to', 'r') as fli:
@@ -249,6 +249,7 @@ def PrintDone():
     print(TColor.BLUE+"\n"+str(done_count) + " task done")
 
 def DoneTask():
+    __tmp__ = False
     try:
         CheckFile(False)
         with open('.to', 'r') as fli:
@@ -280,12 +281,16 @@ def DoneTask():
                             with open('.to', 'w') as fliw:
                                 fliw.write(json.dumps(fli,indent=4))
                                 print(TColor.BLUE+'done')
+                                __tmp__ = 'done:\n' + '\t' + tag + ': ' + fli['to'][tag][task_num-1]['task']
                     else:
                         print(TColor.BLUE+"you did all the task's")
+                        __tmp__ = 'all task in this to in done before'
                 else:
                     print(TColor.RED+'there is no task in this to')
+                    __tmp__ = 'there is no task in this to'
     except Exception as e:
         print(TColor.RED+str(e))
+    return __tmp__
 
 def CompletTo():
     try:
@@ -466,3 +471,12 @@ def log():
                         print('\n|\t' +"done at: " + tmp_end_date)
     except Exception as e:
         print('error: '+str(e))
+
+# this function will get a function and will save what that function return in tag named 'latest' in .to file.
+def Done(f):
+    with open('.to', 'r') as fli:
+        fli = fli.read()
+        fli['latest'] = f()
+        with open('.to', 'w') as fliw:
+            fli = json.dumps(fli, indent=4)
+            fliw.write(fli)
