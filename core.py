@@ -25,7 +25,7 @@ def Uconf():
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
 
-# This method displays tasks related to time and deadlines
+# This method will get the deadline from user, if user inpute be incorrect. the method will try again. 
 def GetDate():
     ''' This part is responsible for receiving the target year '''
     check_y =True
