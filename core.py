@@ -364,6 +364,8 @@ def InsertTask():
                 for i in range(3):
                     print(TColor.BLUE+str(i+1) + ". " +pri[i])
                 priority = input(TColor.GREEN+'priority: ')
+                if(priority == ''):
+                    priority = 2
                 newtask = {
                     "done":"False","task":task,"priority":int(priority),
                     "deadline":GetDate(),
