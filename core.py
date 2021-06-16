@@ -112,7 +112,7 @@ def GetDate():
 
     return Deadline
 
-# Send the remaining days to the deadline
+# will tell us how much time do we have to done our task, this function is use in PrintTask 
 def TimeLeft(task):
     NOW = datetime.now()
     nowline = date(NOW.year, NOW.month, NOW.day)
@@ -293,6 +293,7 @@ def DoneTask():
     return __tmp__
 
 def CompletTo():
+    __tmp__ = []
     try:
         CheckFile(False)
         with open('.to', 'r') as fli:
@@ -304,14 +305,19 @@ def CompletTo():
             which_to = int(input(TColor.NORMAL+'select to[0 to quit]: '))
             if(which_to != 0):
                 tag = list(fli['to'].keys())[which_to-1]
+                __tmp__.append(tag)
                 for k in fli['to'][tag]:
                     k['done'] = 'True'
+                    __tmp__.append(k['task'])
                 tmp_fli = (json.dumps(fli, indent=4))
                 with open('.to', 'w') as fliw:
                     fliw.write(tmp_fli)
                     print(TColor.BLUE+"done")
+                    return __tmp__
     except Exception as e:
         print(TColor.RED+str(e))
+        __tmp__ = False
+        return __tmp__
 
 def InsertTask():
     try:
