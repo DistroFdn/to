@@ -21,7 +21,7 @@ def intractive():
         try:
             command = input(core.TColor.NORMAL+"command (m for menu): ")
             if(command == 'm'):
-                core.Menu()
+                core.MenuIntractive()
             elif(command == 'a'):
                 core.AddTo()
             elif(command == 'i'):
@@ -59,7 +59,7 @@ if(len(sys.argv) > 1):
     if(cli == 'add'):
         core.AddTo()
     elif(cli == 'help' or cli == 'menu' or cli == '--help'):
-        core.Menu()
+        core.MenuNonIntractive()
     elif(cli == 'insert'):
         core.InsertTask()
     elif(cli == 'edit'):

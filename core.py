@@ -163,7 +163,7 @@ class TColor:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def Menu():
+def MenuIntractive():
     print("""
     help:
 
@@ -190,6 +190,31 @@ def Menu():
         quit and exit:
             q  exit
         """)
+
+def MenuNonIntractive():
+    print("""
+        help:
+
+            add:
+                add         add a new to
+                insert      insert a task under a to
+                edit        edit a task or to
+
+            done:
+                fill        completion an entire to
+                done        done one task from a to
+                undone      undone one task
+
+            print:
+                list        print all todo's
+                show        show task's wich you done
+                clear       clear the screen
+
+            progress:
+                prog        show a percentage and a progress of what you done
+                log         show a log of what you done.
+
+            """)
 
 def Clear():
     if(sys.platform == 'linux'):
