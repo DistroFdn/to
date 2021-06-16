@@ -283,14 +283,17 @@ def DoneTask():
                                 print(TColor.BLUE+'done')
                                 __tmp__ = 'done:\n' + '\t' + tag + ': ' + fli['to'][tag][task_num-1]['task']
                                 return __tmp__
+                        else:
+                            return __tmp__
                     else:
                         print(TColor.BLUE+"you did all the task's")
-                        __tmp__ = 'all task in this to in done before'
                 else:
                     print(TColor.RED+'there is no task in this to')
-                    __tmp__ = 'there is no task in this to'
+            else:
+                return __tmp__
     except Exception as e:
         print(TColor.RED+str(e))
+        return __tmp__
 
 def CompletTo():
     __tmp__ = []
