@@ -488,3 +488,9 @@ def Done(f):
             with open('.to', 'w') as fliw:
                 fli = json.dumps(fli, indent=4)
                 fliw.write(fli)
+
+def Commit():
+    with open('.to', 'r') as fli:
+        fli = json.load(fli)
+        text_to_be_commited = fli['latest']
+        os.system(f'git commit -m "{text_to_be_commited}"')

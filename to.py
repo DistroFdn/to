@@ -46,6 +46,8 @@ def intractive():
                 core.Progress()
             elif(command == 'log'):
                 core.log()
+            elif(command == 'commit'):
+                core.Commit()
             else:
                 print(core.TColor.RED+'command is incorrect')
         except KeyboardInterrupt:
@@ -77,7 +79,7 @@ if(len(sys.argv) > 1):
     elif(cli == 'log'):
         core.log()
     elif(cli == 'commit'):
-        pass
+        core.Commit()
     else:
         print(core.TColor.RED+'option is invalid')
 elif(len(sys.argv) == 1):
