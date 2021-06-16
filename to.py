@@ -29,9 +29,9 @@ def intractive():
             elif(command == 'e'):
                 core.Edit()
             elif(command == 'c'):
-                core.CompletTo()
+                core.Done(core.CompletTo)
             elif(command == 'd'):
-                core.DoneTask()
+                core.Done(core.DoneTask)
             elif(command == 'u'):
                 core.UnDoneTask()
             elif(command == 'p'):
