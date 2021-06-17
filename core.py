@@ -120,6 +120,7 @@ def TimeLeft(task):
     # an object will return which have some property like: day
     return deadline - nowline
 
+# every time you call this functin, function will send a dictionary of the towday date
 def SetDate():
     time = {
     'y' : datetime.now().year,
@@ -143,6 +144,7 @@ def CheckFile(init):
                 print(TColor.RED+'Error: first add a to')
                 sys.exit(2)
 
+# this function will get max and min and then print a progress bar in the screen.
 def bar(min, max):
     bar = (min / max) * 100
     tmp = int(bar)
@@ -152,6 +154,7 @@ def bar(min, max):
     print(TColor.GREEN+'[' + bar + spacebar + ']',str(tmp)+'%')
     print('\n')
 
+# theas color is for the linux terminal. every time that program need color. its enough to call one variable of this class
 class TColor:
     PURPPLE = '\033[95m'
     BLUE = '\033[94m'
@@ -163,6 +166,7 @@ class TColor:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+# this functin is for the intractive menu.
 def MenuIntractive():
     print("""
     help:
@@ -191,6 +195,7 @@ def MenuIntractive():
             q  exit
         """)
 
+# this function is for non-intractive menu
 def MenuNonIntractive():
     print("""
         help:
@@ -216,12 +221,14 @@ def MenuNonIntractive():
 
             """)
 
+# this function will clear the intractive-command-line
 def Clear():
     if(sys.platform == 'linux'):
         os.system('clear')
     elif(sys.platform == 'win32' or sys.platform == 'win64'):
         os.system('cls')
 
+# this function will list all task and thair dead line on the screen
 def PrintTask():
     CheckFile(False)
     with open('.to', 'r') as fli:
@@ -258,6 +265,7 @@ def PrintTask():
             if(to_count_done == to_count_list):
                 print(TColor.BLUE+'\t'+'all done')
 
+# this function will print all doned task
 def PrintDone():
     CheckFile(False)
     done_count = 0
@@ -273,6 +281,7 @@ def PrintDone():
                     done_count += 1
     print(TColor.BLUE+"\n"+str(done_count) + " task done")
 
+# this functin will done a task fron a list of to
 def DoneTask():
     __tmp__ = False
     try:
@@ -320,6 +329,7 @@ def DoneTask():
         print(TColor.RED+str(e))
         return __tmp__
 
+# this function will full complete a list of to
 def CompletTo():
     __tmp__ = []
     try:
@@ -347,6 +357,7 @@ def CompletTo():
         __tmp__ = False
         return __tmp__
 
+# this function will insert a task in a list of to
 def InsertTask():
     try:
         CheckFile(False)
@@ -378,6 +389,7 @@ def InsertTask():
     except Exception as e:
         print(TColor.RED+str(e))
 
+# this function is for add a to
 def AddTo():
     try:
         CheckFile(True)
@@ -397,6 +409,7 @@ def AddTo():
     except Exception as e:
         print(TColor.RED+str(e))
 
+# this function is to edit a task
 def Edit():
     try:
         CheckFile(False)
@@ -433,8 +446,8 @@ def Edit():
     except Exception as e:
         print(TColor.RED+str(e))
 
+# this function will use bar and .to file to print a progress. it will print a progress of all thing.
 def Progress():
-    # every time that you call this function. it will print a progress of all thing.
     CheckFile(False)
     with open('.to', 'r') as fli:
         all_done_count = 0
@@ -456,6 +469,7 @@ def Progress():
             print(TColor.YELLOW + 'At All:', end=' ')
             bar(all_done_count, all_task_count)
 
+# this function will undone a doned task
 def UnDoneTask():
     try:
         CheckFile(False)
@@ -490,6 +504,7 @@ def UnDoneTask():
     except Exception as e:
         print(TColor.RED+str(e))
 
+# this function is to show who done what and whene done what and whene added what
 def log():
     CheckFile(init=False)
     try:
@@ -519,6 +534,7 @@ def Done(f):
                 fli = json.dumps(fli, indent=4)
                 fliw.write(fli)
 
+# this functin is to use the text of last doned task for git commit message. every time that this function called. this command will run: git commit -m
 def Commit():
     with open('.to', 'r') as fli:
         fli = json.load(fli)
