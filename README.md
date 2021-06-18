@@ -1,4 +1,4 @@
-# to (Alfa)
+# to (Alpha)
 
 ## a todo list manager in command line.
 
