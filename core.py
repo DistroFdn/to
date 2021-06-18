@@ -213,7 +213,6 @@ def MenuNonIntractive():
             print:
                 list        print all todo's
                 show        show task's wich you done
-                clear       clear the screen
 
             progress:
                 prog        show a percentage and a progress of what you done
