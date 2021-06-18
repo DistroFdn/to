@@ -39,3 +39,7 @@ we wish you enjoy of it.
 - [ ] Web version
 - [ ] Add to official Repository
 - [ ] add Table
+
+# License
+
+![h](https://raw.githubusercontent.com/DistroTEAM/to/master/20210615_195113.jpg)
