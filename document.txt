@@ -51,3 +51,84 @@ Module's:
 		and what this function is do 
 		first is check the file is exist or not.
 		second this function will get username and email and then create the file.
+
+Function's:
+	Uconf:
+		every time that we need to save who done what. whe call this function
+		to read the email and usernam form 'to.conf' and return a tuple of them.
+
+	AddTo:
+		add a list of to.
+		like: fix, add, make, run, get, watch, listen, etc.	  
+	CheckFile:
+		this functin will check the .to is exist or no.
+		if exist. it will let program continu.
+		if not, and the parametr init==True, this function will create the file.
+		if init==false program will exit with status 2
+		init indicate that the program is initializing or no.
+		
+	Clear:
+		in intractive mode we need to clear the screen. this function will do that.
+  
+	Commit:
+		to commit the last task text as git commit message.
+		this function will run this command 'git commit -m YYY'
+		instead of YYY will be the latest task text
+
+	CompletTo:
+		to complete an entire list of task.
+		after mark all as done, all the task text in the list will return as a list.
+
+	Done:
+		any time that user done one task.
+		the task text should save in a tag called 'latest'
+		this function will save the task text in that tag if the function it got return text
+		the text of the task will come from DoneTask() and CopleteTo()
+
+	DoneTask
+		done a task. but never call directly.
+		this functin will return a string of the the task text
+
+	Edit:
+		edit a task.
+
+	GetDate:
+		any time that we need to get a deadline of a task from user.
+		this function will get them and return a dictionary of
+		year, month, day
+		 
+	InsertTask:
+		function to add a task in a list of task.
+
+	MenuIntractive:
+		this is the help for the intractive menu
+
+	MenuNonIntractive:
+		command of intractive and non-intractive cli is differnt so we have to print the
+		help that corespond.
+
+	PrintDone:
+		show the task's which doned.
+
+	PrintTask:
+		list the task that user should to do.
+  
+	Progress:
+		will read the '.to' file and gave the information of percent of doned task's
+		to Bar().
+	SetDate:
+		to get the towday date in dictionary format.
+
+	TColor:
+		this is a class that have some string varibale that store teminal-color code.
+		the variable will use whene we need to print a colorized output.
+
+	TimeLeft:
+		whenever that we need to show to user how much day do we have to reach the 
+		deadline, this function will use.
+  
+	UnDoneTask:
+		this function will undone a doned task
+ 	
+	Bar:
+		bar get a max and min, then will print a progressbar of percent of doned task.
