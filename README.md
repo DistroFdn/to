@@ -66,4 +66,3 @@
    > - progress
 			   ```prog```        	show a percentage and a progress of what you done
 			   ```log```         	show a log of what you done.
----
