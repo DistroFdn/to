@@ -38,6 +38,7 @@
 >
 
 ---
+---
 
 > ### __how to install__
 > - ``` cd /opt ```
@@ -46,23 +47,28 @@
 > - ``` ln /opt/to/to ~/.locale/bin/to ```
 > - ``` to ```
 ---
-
+---
  ### Usage
- >
- > - adding:
-                ```add```         		add a new to
-                ```insert```      	insert a task under a to
-                ```edit```   		    edit a task or to
-   >---
-   > - done:
-                ```fill```        	completion an entire to
-                ```done```        	done one task from a to
-                ```undone```      	undone one task
-   >---
-> - print:
-                ```list```        print all todo's
-                ```show```        show task's wich you doneprogress:
-   > ---
-   > - progress
-			   ```prog```        	show a percentage and a progress of what you done
-			   ```log```         	show a log of what you done.
+>
+> ``` add ``` to add a list
+>
+> ``` insert ``` to insert task to a list
+>
+> ```edit``` to edit a task
+---
+> 
+> ```done``` done a task
+>
+> ```fill``` full complete an entire a list of task
+>
+> ```undone``` undone a task
+---
+>
+> ``` list ``` to list all the task
+>
+> ``` show ``` show task's which you done
+---
+> ``` prog ``` show a percentage and a progress of what you done
+> 
+> ``` log ``` show a log of what you done.
+---
