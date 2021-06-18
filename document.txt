@@ -1,4 +1,4 @@
-concept:
+Concept:
 	this program is usefull to list your todo.
 	enywhere this program run, it will make a file named '.to' in the
 	directory that runed in.
@@ -24,3 +24,30 @@ concept:
 	so we can have two list: fix and add
 	in fix list we will add the bug which should fix.
 	in add list we will add feacher that should add.
+	
+	the other reasen that list's are useful is to mention someone.
+	for example if i want to assign some task to one person of the team all i need to do
+	is that make a list that start with '@' and name of that person. like: @m_shaben
+	this feacher in the fuchure can be use to send the list to that person just after
+	it definded. or may can send to the email just by assign the task to an email.
+
+
+Module's:
+	to.py:
+		this is the main of the program.
+		the main control all other module's.
+		the intractive and non-intractive command-line implimented in this file.
+
+	core.py:
+		all the function that work with '.to' file is implimented in this file.
+		there is a class that use to print colorized output according to task priority.
+
+	initer.py:
+		any user that use this program should say who is it.
+		this informatin is use to log who done what.
+		there are just a email and a username that should store in a file.
+		the file in the linux-base will be in ~/.local/share/to.conf
+		and in windows system it will be in the [user-home-dir]/to.conf
+		and what this function is do 
+		first is check the file is exist or not.
+		second this function will get username and email and then create the file.
