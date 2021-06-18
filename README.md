@@ -1,9 +1,9 @@
 # to (Alfa)
 
-## a todo list manager in command line.
+**a todo list manager in command line.**
 
-> ## **_Description_**:
-> 
+**Description**:
+
 >	this program is useful to list your todo.
 >	everywhere this program run, it will make a file named '.to' in the
 >	directory that runed in.
@@ -35,40 +35,42 @@
 >	is that make a list that start with '@' and name of that person. like: @m_shaben
 >	this feacher in the fuchure can be use to send the list to that person just after
 >	it definded. or may can send to the email just by assign the task to an email.
->
 
 ---
+
+**how to install**
+
+```bash
+cd /opt
+git clone https://github.com/DistroTEAM/to.git
+chmod -R 777 /opt/to
+ln /opt/to/to ~/.locale/bin/to
+to
+```
+
 ---
 
-> ### __how to install__
-> - ``` cd /opt ```
-> - ``` git clone https://github.com/DistroTEAM/to.git ```
-> - ``` chmod -R 777 /opt/to ```
-> - ``` ln /opt/to/to ~/.locale/bin/to ```
-> - ``` to ```
----
----
- ### Usage
+**Usage**
 >
 > ``` add ``` to add a list
 >
 > ``` insert ``` to insert task to a list
 >
 > ```edit``` to edit a task
----
-> 
+
+
 > ```done``` done a task
 >
 > ```fill``` full complete an entire a list of task
 >
 > ```undone``` undone a task
----
->
+
+
 > ``` list ``` to list all the task
 >
 > ``` show ``` show task's which you done
----
+
+
 > ``` prog ``` show a percentage and a progress of what you done
 > 
 > ``` log ``` show a log of what you done.
----
