@@ -5,6 +5,7 @@ import initer
 import argparse
 import sys
 
+
 # this method run every time that the program run, this method will check that
 # you have configed your username and emial or not. if yes you can continue to use
 #if no, method will do this for you.
@@ -48,10 +49,18 @@ def intractive():
                 core.log()
             elif(command == 'commit'):
                 core.Commit()
+            elif(command == 'cr'):
+                core.createReadme()
+            elif(command == 'cf'):
+                core.changeConf()
+            elif(command == 'ur'):
+                core.updateREADME()
             else:
                 print(core.TColor.RED+'command is incorrect')
         except KeyboardInterrupt:
             print(core.TColor.RED+'Quit')
+        except TypeError:
+            print('good')
 
 # this is the non-intractive command-line interface
 if(len(sys.argv) > 1):
