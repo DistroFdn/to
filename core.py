@@ -25,7 +25,7 @@ def Uconf():
         fli = json.load(fli)
         return (str(fli['username']), fli['email'])
 
-# This method will get the deadline from user, if user inpute be incorrect. the method will try again. 
+# This method will get the deadline from user, if user inpute be incorrect. the method will try again.
 def GetDate():
     ''' This part is responsible for receiving the target year '''
     check_y =True
@@ -112,7 +112,7 @@ def GetDate():
 
     return Deadline
 
-# will tell us how much time do we have to done our task, this function is use in PrintTask 
+# will tell us how much time do we have to done our task, this function is use in PrintTask
 def TimeLeft(task):
     NOW = datetime.now()
     nowline = date(NOW.year, NOW.month, NOW.day)
@@ -189,10 +189,15 @@ def MenuIntractive():
         progress:
             prog    show a percentage and a progress of what you done
             log     show a log of what you done.
+            cr      Create README.md in your github repo
+            ur      update README.md for change .to tile
 
 
         quit and exit:
             q  exit
+
+        change config:
+            cf  change to.conf file
         """)
 
 # this function is for non-intractive menu
@@ -533,9 +538,51 @@ def Done(f):
                 fli = json.dumps(fli, indent=4)
                 fliw.write(fli)
 
-# this functin is to use the text of last doned task for git commit message. every time that this function called. this command will run: git commit -m
+# this functin is to use the text of last doned
+#task for git commit message. every time that this function called.
+#this command will run: git commit -m
 def Commit():
     with open('.to', 'r') as fli:
         fli = json.load(fli)
         text_to_be_commited = fli['latest']
         os.system(f'git commit -m "{text_to_be_commited}"')
+
+path_file=None
+def createReadme():
+    text=('Hello ;)'
+          'please Create repo in github and clone your repo also path '
+          'clone repo in this input :)'
+    )
+    print(TColor.BLUE+text)
+    print(TColor.RED+"**Enter complex path such as /home/user/file**")
+    path_file = input(TColor.NORMAL+"path your clone file (end .md): ")
+    conf_path = None
+    if os.name == "nt":
+        conf_path = str(initer.Whoami()) + '\\PathReadme.conf'
+    else:
+        conf_path = str(initer.Whoami()) + '/.local/share/PathReadme.conf'
+    with open(conf_path, 'w') as fli:
+        conf_fli = {'PathFileRepo':path_file}
+        conf_fli = json.dumps(conf_fli, indent=4)
+        fli.write(conf_fli)
+
+    if os.path.exists(path_file):
+        print(TColor.GREEN+'sucsses')
+    else:
+        print(TColor.RED+'file not exists :(')
+        return
+
+def updateREADME():
+    os.system('python /home/mehran/Desktop/to/Create.py')
+    output=('finish your README file update\n'
+            'you just go to folder repo , add and commit change also push\n'
+            'and Enjoy:)\n'
+    )
+    print(TColor.GREEN+output)
+
+
+def changeConf():
+    print(TColor.YELLOW + 'change username and email :)')
+    username = input(TColor.CYAN + 'new usesrname: ')
+    email = input(TColor.CYAN + 'new email: ')
+    initer.UserConf(username, email)
