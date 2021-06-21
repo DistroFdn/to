@@ -345,6 +345,11 @@ def CompletTo():
                 __tmp__.append(tag)
                 for k in fli['to'][tag]:
                     k['done'] = 'True'
+                    k['by'] = {
+                        'username' : Uconf()[0],
+                        'email' : Uconf()[1],
+                        'doneat' : SetDate()
+                    }
                     __tmp__.append(k['task'])
                 tmp_fli = (json.dumps(fli, indent=4))
                 with open('.to', 'w') as fliw:
