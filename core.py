@@ -572,13 +572,14 @@ def createReadme():
         fli.write(conf_fli)
 
     if os.path.exists(path_file):
+        os.system('python Create.py')
         print(TColor.GREEN+'sucsses')
     else:
         print(TColor.RED+'file not exists :(')
         return
 
 def updateREADME():
-    os.system('python /home/mehran/Desktop/to/Create.py')
+    os.system('python Create.py')
     output=('finish your README file update\n'
             'you just go to folder repo , add and commit change also push\n'
             'and Enjoy:)\n'
