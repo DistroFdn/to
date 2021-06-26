@@ -568,7 +568,7 @@ def createReadme():
 
     if os.path.exists(path_file):
         os.system('python Create.py')
-        print(TColor.GREEN+'Successful')
+        print(TColor.GREEN+'sucsses')
     else:
         print(TColor.RED+'file not exists :(')
         return
