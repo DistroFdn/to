@@ -85,3 +85,5 @@ to
 > ``` cr ``` Create README in your github repo
 
 > ``` ur ``` Update README.md file in your repo when change .to file
+
+[Documents for helping in how to use](documents.txt)
