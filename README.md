@@ -86,4 +86,4 @@ to
 
 > ``` ur ``` Update README.md file in your repo when change .to file
 
-[Documents for helping in how to use](document.txt)
+[Documents for helping in how to use](document.md)
