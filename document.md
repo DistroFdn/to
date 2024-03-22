@@ -1,5 +1,5 @@
 Concept:
-	this program is usefull to list your todo.
+- this program is usefull to list your todo.
 	enywhere this program run, it will make a file named '.to' in the
 	directory that runed in.
 	this file is the database of the program in a kind of json format, more
