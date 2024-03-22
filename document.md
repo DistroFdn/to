@@ -27,7 +27,7 @@ Concept:
 	
 	the other reasen that list's are useful is to mention someone.
 	for example if i want to assign some task to one person of the team all i need to do
-	is that make a list that start with '@' and name of that person. like: @m_shaben
+	is that make a list that start with '@' and name of that person. like: @mehranalam
 	this feacher in the fuchure can be use to send the list to that person just after
 	it definded. or may can send to the email just by assign the task to an email.
 
